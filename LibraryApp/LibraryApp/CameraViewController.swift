@@ -11,6 +11,9 @@ import AVFoundation
 
 //extends UIView and specifies that the view will be backed by AVCaptureVideoPreviewLayer
 class CameraView: UIView {
+    
+    var scanned = false
+    
     override class var layerClass: AnyClass {
         get {
             return AVCaptureVideoPreviewLayer.self
