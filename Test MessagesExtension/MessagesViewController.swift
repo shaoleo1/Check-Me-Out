@@ -68,5 +68,9 @@ class MessagesViewController: MSMessagesAppViewController {
     
         // Use this method to finalize any behaviors associated with the change in presentation style.
     }
+    
+    var time = 0
+    @IBOutlet weak var Timer: UILabel!
+    
 
 }
