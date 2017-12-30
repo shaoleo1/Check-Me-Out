@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		165185511FF8430C00477518 /* 1514670933735.JPEG in Resources */ = {isa = PBXBuildFile; fileRef = 165185501FF8430C00477518 /* 1514670933735.JPEG */; };
 		86393FB31FE342630059507F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86393FB21FE342630059507F /* AppDelegate.swift */; };
 		86393FB51FE342630059507F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86393FB41FE342630059507F /* FirstViewController.swift */; };
 		86393FB71FE342630059507F /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86393FB61FE342630059507F /* SecondViewController.swift */; };
@@ -19,8 +20,6 @@
 		86AC46681FEA068A003FEB11 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AC46671FEA068A003FEB11 /* Search.swift */; };
 		86AC466A1FEA069B003FEB11 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AC46691FEA069B003FEB11 /* Account.swift */; };
 		86AC46701FF41840003FEB11 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AC466F1FF41840003FEB11 /* LoginVC.swift */; };
-		86AC46721FF43EE5003FEB11 /* Unknown-1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 86AC46711FF43EE4003FEB11 /* Unknown-1.jpeg */; };
-		86AC46741FF43FC7003FEB11 /* EbM7yhGy.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 86AC46731FF43FC7003FEB11 /* EbM7yhGy.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		165185501FF8430C00477518 /* 1514670933735.JPEG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1514670933735.JPEG; sourceTree = "<group>"; };
 		86393FAF1FE342630059507F /* LibraryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LibraryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86393FB21FE342630059507F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86393FB41FE342630059507F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -59,8 +59,6 @@
 		86AC46671FEA068A003FEB11 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		86AC46691FEA069B003FEB11 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		86AC466F1FF41840003FEB11 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginVC.swift; path = ../LoginVC.swift; sourceTree = "<group>"; };
-		86AC46711FF43EE4003FEB11 /* Unknown-1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Unknown-1.jpeg"; sourceTree = "<group>"; };
-		86AC46731FF43FC7003FEB11 /* EbM7yhGy.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = EbM7yhGy.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,9 +116,8 @@
 				86AC46671FEA068A003FEB11 /* Search.swift */,
 				86AC46691FEA069B003FEB11 /* Account.swift */,
 				86AC466F1FF41840003FEB11 /* LoginVC.swift */,
+				165185501FF8430C00477518 /* 1514670933735.JPEG */,
 				86393FB81FE342630059507F /* Main.storyboard */,
-				86AC46731FF43FC7003FEB11 /* EbM7yhGy.jpeg */,
-				86AC46711FF43EE4003FEB11 /* Unknown-1.jpeg */,
 				86393FBB1FE342630059507F /* Assets.xcassets */,
 				86393FBD1FE342630059507F /* LaunchScreen.storyboard */,
 				86393FC01FE342630059507F /* Info.plist */,
@@ -253,10 +250,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86AC46721FF43EE5003FEB11 /* Unknown-1.jpeg in Resources */,
+				165185511FF8430C00477518 /* 1514670933735.JPEG in Resources */,
 				86393FBF1FE342630059507F /* LaunchScreen.storyboard in Resources */,
 				86393FBC1FE342630059507F /* Assets.xcassets in Resources */,
-				86AC46741FF43FC7003FEB11 /* EbM7yhGy.jpeg in Resources */,
 				86393FBA1FE342630059507F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,7 +451,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 528T5U7KUX;
+				DEVELOPMENT_TEAM = GMP5EEF274;
 				INFOPLIST_FILE = LibraryApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Vicky.LibraryApp;
@@ -470,7 +466,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 528T5U7KUX;
+				DEVELOPMENT_TEAM = GMP5EEF274;
 				INFOPLIST_FILE = LibraryApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Vicky.LibraryApp;
