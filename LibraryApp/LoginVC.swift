@@ -11,11 +11,20 @@ import UIKit
 class LoginVC: UIViewController {
 
     @IBOutlet weak var sidField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let defaults = UserDefaults.standard
+        if (defaults.object(forKey: "sid") as? String) != nil {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let tabBarController = storyboard.instantiateViewController(withIdentifier: "tabBarController") as! UITabBarController
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.window?.rootViewController = tabBarController
+        }
+        loginButton.layer.cornerRadius = 2
     }
 
     override func didReceiveMemoryWarning() {

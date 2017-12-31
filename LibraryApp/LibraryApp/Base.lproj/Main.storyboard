@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Futura.ttc">
+            <string>Futura-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Account-->
         <scene sceneID="mbs-Ck-aOc">
@@ -17,14 +22,38 @@
                     <view key="view" contentMode="scaleToFill" id="lq6-5e-1eS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggC-Sk-zKR">
+                                <rect key="frame" x="152" y="303" width="71" height="32"/>
+                                <color key="backgroundColor" red="0.72374682739999996" green="0.0" blue="0.067541734670000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="71" id="Jgq-St-gce"/>
+                                    <constraint firstAttribute="height" constant="32" id="pHB-MA-MQj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                                <state key="normal" title="Log out">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOutButton:" destination="j89-em-Kpo" eventType="touchUpInside" id="kWd-uU-nay"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ggC-Sk-zKR" firstAttribute="centerY" secondItem="rKs-LC-83q" secondAttribute="centerY" id="88h-JQ-cxU"/>
+                            <constraint firstItem="ggC-Sk-zKR" firstAttribute="centerX" secondItem="rKs-LC-83q" secondAttribute="centerX" id="Oxv-Mr-Lyh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="rKs-LC-83q"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Account" id="XCr-hI-EWb"/>
+                    <connections>
+                        <outlet property="logOutButton" destination="ggC-Sk-zKR" id="fhV-yv-GMM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zre-Rb-Uam" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="934" y="376"/>
+            <point key="canvasLocation" x="933.60000000000002" y="375.56221889055473"/>
         </scene>
         <!--My Books-->
         <scene sceneID="XFZ-Mw-5xD">
@@ -34,6 +63,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="L7I-4m-VMV" detailTextLabel="e2Z-w5-f48" style="IBUITableViewCellStyleSubtitle" id="ov9-9P-IGG">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ov9-9P-IGG" id="WIX-iR-7kR">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="L7I-4m-VMV">
+                                            <rect key="frame" x="16" y="2" width="33" height="23.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="e2Z-w5-f48">
+                                            <rect key="frame" x="16" y="25.5" width="43.5" height="17"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="e8h-wt-qn9" id="jra-k7-enB"/>
                             <outlet property="delegate" destination="e8h-wt-qn9" id="RwL-aC-uvw"/>
@@ -59,41 +114,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FmG-bk-rfI">
+                                <rect key="frame" x="16" y="328.5" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oon-Gh-Tie">
-                                <rect key="frame" x="168" y="356.5" width="38" height="30"/>
-                                <state key="normal" title="Login"/>
+                                <rect key="frame" x="158" y="366" width="59" height="31"/>
+                                <color key="backgroundColor" red="0.72374682739999996" green="0.0" blue="0.067541734670000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="59" id="BW2-c8-bDd"/>
+                                    <constraint firstAttribute="height" constant="31" id="DIs-1a-KTp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="Login:" destination="QTu-19-9ck" eventType="touchUpInside" id="yWD-df-A5n"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FmG-bk-rfI">
-                                <rect key="frame" x="137.5" y="318.5" width="100" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="JeJ-cn-TvZ"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Oon-Gh-Tie" firstAttribute="centerX" secondItem="kHv-df-uYU" secondAttribute="centerX" id="2vG-wI-qUx"/>
                             <constraint firstItem="Oon-Gh-Tie" firstAttribute="centerX" secondItem="kHv-df-uYU" secondAttribute="centerX" id="NGd-4A-HFv"/>
-                            <constraint firstItem="FmG-bk-rfI" firstAttribute="centerY" secondItem="kHv-df-uYU" secondAttribute="centerY" id="bhC-r1-fqV"/>
-                            <constraint firstItem="FmG-bk-rfI" firstAttribute="centerX" secondItem="kHv-df-uYU" secondAttribute="centerX" id="c5N-i9-z47"/>
+                            <constraint firstItem="FmG-bk-rfI" firstAttribute="centerY" secondItem="Eza-zv-wtZ" secondAttribute="centerY" id="PRJ-8s-b7e"/>
+                            <constraint firstItem="FmG-bk-rfI" firstAttribute="leading" secondItem="Eza-zv-wtZ" secondAttribute="leading" constant="16" id="djx-zW-aX7"/>
+                            <constraint firstItem="Eza-zv-wtZ" firstAttribute="trailing" secondItem="FmG-bk-rfI" secondAttribute="trailing" constant="16" id="eGK-71-6JI"/>
                             <constraint firstItem="Oon-Gh-Tie" firstAttribute="top" secondItem="FmG-bk-rfI" secondAttribute="bottom" constant="8" id="i0u-km-1ZC"/>
                             <constraint firstItem="Oon-Gh-Tie" firstAttribute="centerX" secondItem="kHv-df-uYU" secondAttribute="centerX" id="nm8-wW-Kjj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Eza-zv-wtZ"/>
                     </view>
                     <connections>
+                        <outlet property="loginButton" destination="Oon-Gh-Tie" id="xfo-qs-AQh"/>
                         <outlet property="sidField" destination="FmG-bk-rfI" id="sKf-eV-1RH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NQ2-uc-GQL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2" y="-816"/>
+            <point key="canvasLocation" x="-2.3999999999999999" y="-816.34182908545733"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="wg7-f3-ORb">
