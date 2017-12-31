@@ -121,7 +121,6 @@ class FirstViewController: UITableViewController {
                                                 let url = URL(string: smallThumbnail)
                                                 let data = try Data(contentsOf: url!)
                                                 cell?.imageView?.image = UIImage(data: data)
-                                                self.bookTableView.reloadData()
                                             } catch {
                                                 print(error)
                                             }
