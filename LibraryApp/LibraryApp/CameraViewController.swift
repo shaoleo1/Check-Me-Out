@@ -225,6 +225,8 @@ class CameraViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
                                     }
                                 }
                             }
+                        } else {
+                            self.searching = false
                         }
                     }
                 } catch {
