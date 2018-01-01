@@ -20,6 +20,7 @@
 		86AC46681FEA068A003FEB11 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AC46671FEA068A003FEB11 /* Search.swift */; };
 		86AC466A1FEA069B003FEB11 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AC46691FEA069B003FEB11 /* Account.swift */; };
 		86AC46701FF41840003FEB11 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AC466F1FF41840003FEB11 /* LoginVC.swift */; };
+		86AC467C1FFAEA52003FEB11 /* Facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 86AC467B1FFAEA52003FEB11 /* Facebook.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		86AC46671FEA068A003FEB11 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		86AC46691FEA069B003FEB11 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		86AC466F1FF41840003FEB11 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginVC.swift; path = ../LoginVC.swift; sourceTree = "<group>"; };
+		86AC467B1FFAEA52003FEB11 /* Facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Facebook.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				86AC46691FEA069B003FEB11 /* Account.swift */,
 				86AC466F1FF41840003FEB11 /* LoginVC.swift */,
 				165185501FF8430C00477518 /* SCHOOL_MAP.JPEG */,
+				86AC467B1FFAEA52003FEB11 /* Facebook.png */,
 				86393FB81FE342630059507F /* Main.storyboard */,
 				86393FBB1FE342630059507F /* Assets.xcassets */,
 				86393FBD1FE342630059507F /* LaunchScreen.storyboard */,
@@ -258,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				165185511FF8430C00477518 /* SCHOOL_MAP.JPEG in Resources */,
+				86AC467C1FFAEA52003FEB11 /* Facebook.png in Resources */,
 				86393FBF1FE342630059507F /* LaunchScreen.storyboard in Resources */,
 				86393FBC1FE342630059507F /* Assets.xcassets in Resources */,
 				86393FBA1FE342630059507F /* Main.storyboard in Resources */,

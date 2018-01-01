@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Social
 
 class Account: UIViewController {
     
@@ -22,6 +23,27 @@ class Account: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func shareToFacebook(_ sender: Any) {
+        //alert
+        let alert = UIAlertController(title: "Share", message: "Share this app on Facebook!", preferredStyle: .actionSheet)
+        
+        //action
+        let share = UIAlertAction(title: "Share to Facebook", style: .default) {(ACTION) in
+            //checks if user is connected to Facebook
+            if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook) {
+                let post = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+                post?.setInitialText("Come check out this app!")
+                self.present(post!, animated: true, completion: nil)
+            }
+        }
+        
+        //adds action to the alert
+        alert.addAction(share)
+        
+        //shows the alert
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func logOutButton(_ sender: UIButton) {
