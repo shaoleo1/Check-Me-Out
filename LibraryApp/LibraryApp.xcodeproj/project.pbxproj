@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		165185511FF8430C00477518 /* 1514670933735.JPEG in Resources */ = {isa = PBXBuildFile; fileRef = 165185501FF8430C00477518 /* 1514670933735.JPEG */; };
+		165185511FF8430C00477518 /* SCHOOL_MAP.JPEG in Resources */ = {isa = PBXBuildFile; fileRef = 165185501FF8430C00477518 /* SCHOOL_MAP.JPEG */; };
 		86393FB31FE342630059507F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86393FB21FE342630059507F /* AppDelegate.swift */; };
 		86393FB51FE342630059507F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86393FB41FE342630059507F /* FirstViewController.swift */; };
 		86393FB71FE342630059507F /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86393FB61FE342630059507F /* SecondViewController.swift */; };
@@ -40,7 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		165185501FF8430C00477518 /* 1514670933735.JPEG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1514670933735.JPEG; sourceTree = "<group>"; };
+		165185501FF8430C00477518 /* SCHOOL_MAP.JPEG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SCHOOL_MAP.JPEG; sourceTree = "<group>"; };
+		165185521FF9769F00477518 /* LibraryApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LibraryApp.entitlements; sourceTree = "<group>"; };
 		86393FAF1FE342630059507F /* LibraryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LibraryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86393FB21FE342630059507F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86393FB41FE342630059507F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +110,7 @@
 		86393FB11FE342630059507F /* LibraryApp */ = {
 			isa = PBXGroup;
 			children = (
+				165185521FF9769F00477518 /* LibraryApp.entitlements */,
 				86393FB21FE342630059507F /* AppDelegate.swift */,
 				86393FB41FE342630059507F /* FirstViewController.swift */,
 				86393FB61FE342630059507F /* SecondViewController.swift */,
@@ -116,7 +118,7 @@
 				86AC46671FEA068A003FEB11 /* Search.swift */,
 				86AC46691FEA069B003FEB11 /* Account.swift */,
 				86AC466F1FF41840003FEB11 /* LoginVC.swift */,
-				165185501FF8430C00477518 /* 1514670933735.JPEG */,
+				165185501FF8430C00477518 /* SCHOOL_MAP.JPEG */,
 				86393FB81FE342630059507F /* Main.storyboard */,
 				86393FBB1FE342630059507F /* Assets.xcassets */,
 				86393FBD1FE342630059507F /* LaunchScreen.storyboard */,
@@ -212,6 +214,11 @@
 					86393FAE1FE342630059507F = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					86393FC41FE342630059507F = {
 						CreatedOnToolsVersion = 9.1;
@@ -250,7 +257,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				165185511FF8430C00477518 /* 1514670933735.JPEG in Resources */,
+				165185511FF8430C00477518 /* SCHOOL_MAP.JPEG in Resources */,
 				86393FBF1FE342630059507F /* LaunchScreen.storyboard in Resources */,
 				86393FBC1FE342630059507F /* Assets.xcassets in Resources */,
 				86393FBA1FE342630059507F /* Main.storyboard in Resources */,
@@ -450,14 +457,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LibraryApp/LibraryApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GMP5EEF274;
 				INFOPLIST_FILE = LibraryApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Vicky.LibraryApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.leoshao.libraryapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -465,14 +474,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LibraryApp/LibraryApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GMP5EEF274;
 				INFOPLIST_FILE = LibraryApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Vicky.LibraryApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.leoshao.libraryapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

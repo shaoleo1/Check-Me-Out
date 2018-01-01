@@ -11,9 +11,12 @@ import UIKit
 
 class Account: UIViewController {
     
+    @IBOutlet weak var logOutButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        logOutButton.layer.cornerRadius = 2
     }
     
     override func didReceiveMemoryWarning() {
@@ -21,6 +24,14 @@ class Account: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func logOutButton(_ sender: UIButton) {
+        let defaults = UserDefaults.standard
+        defaults.removeObject(forKey:"sid")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController = loginVC
+    }
     
 }
 
