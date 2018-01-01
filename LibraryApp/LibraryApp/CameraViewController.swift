@@ -29,6 +29,9 @@ class CameraView: UIView {
 
 class CameraViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
+    var searching = false
+    let defaults = UserDefaults.standard
+    
     var cameraView: CameraView!
     let session = AVCaptureSession()
     let sessionQueue = DispatchQueue(label: AVCaptureSession.self.description(), attributes: [], target: nil)
@@ -119,6 +122,7 @@ class CameraViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
     
     //capture barcode
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+        let sid = defaults.object(forKey: "sid") as? String
         if (metadataObjects.count > 0 && metadataObjects.first is AVMetadataMachineReadableCodeObject) {
             let scan = metadataObjects.first as! AVMetadataMachineReadableCodeObject
             
@@ -126,7 +130,9 @@ class CameraViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
             
             print(isbn!)
             
-            var request = URLRequest(url: URL(string: "https://www.googleapis.com/books/v1/volumes?q=isbn:" + isbn!)!)
+            if (!searching) {
+            searching = true
+            var request = URLRequest(url: URL(string: "https://www.googleapis.com/books/v1/volumes?q=isbn:" + isbn! + "&key=AIzaSyCidOJdqXesqJzB_VMyXJtjTbAA1XiVkvY")!)
             // Sets the http method to GET which means GETting data FROM the API. There are two methods, GET and POST. POST means POSTing data TO the API. In this case, we're using GET.
             request.httpMethod = "GET"
             // Sets the file type that the data will be retrieved to be JSON, which is the standard format.
@@ -147,10 +153,75 @@ class CameraViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
                                 if let volumeInfo = nestedDict["volumeInfo"] as? [String: Any] {
                                 // Looks up the term and saves it into the variable 'term'.
                                     if let title = volumeInfo["title"] as? String {
-                                        let alertController = UIAlertController(title: title, message: isbn, preferredStyle: .alert)
-                                        alertController.addAction(UIAlertAction(title: "Check Out", style: .default, handler:nil))
-                                        
-                                        self.present(alertController, animated: true, completion: nil)
+                                        if let authors = volumeInfo["authors"] as? [String] {
+                                            var combinedAuthors = ""
+                                            for (index, author) in authors.enumerated() {
+                                                if (index == 0) {
+                                                    combinedAuthors += author
+                                                } else {
+                                                    combinedAuthors = combinedAuthors + " and " + author
+                                                }
+                                            }
+                                            let alertController = UIAlertController(title: title, message: combinedAuthors, preferredStyle: .alert)
+                                            alertController.addAction(UIAlertAction(title: "Check Out", style: .cancel, handler:{ action in
+                                                let url = URL(string: "http://52.22.1.14:3000/library/api/v1/checkedout")!
+                                                var request = URLRequest(url: url)
+                                                request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+                                                request.httpMethod = "POST"
+                                                let postString = "sid=\(sid!)&isbn=\(isbn!)&key=bsvr9N5wrGJVDz98UvBMnGt8"
+                                                request.httpBody = postString.data(using: .utf8)
+                                                let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                                                    guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                                                        print("error=\(String(describing: error))")
+                                                        return
+                                                    }
+                                                    
+                                                    if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+                                                        print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                                                        print("response = \(String(describing: response))")
+                                                    }
+                                                    
+                                                    let responseString = String(data: data, encoding: .utf8)
+                                                    print("responseString = \(String(describing: responseString))")
+                                                }
+                                                task.resume()
+                                                self.searching = false
+                                            }))
+                                            alertController.addAction(UIAlertAction(title: "Cancel", style: .default, handler:{ action in
+                                                self.searching = false
+                                            }))
+                                            self.present(alertController, animated: true, completion: nil)
+                                        } else {
+                                            let alertController = UIAlertController(title: title, message: "", preferredStyle: .alert)
+                                            alertController.addAction(UIAlertAction(title: "Check Out", style: .cancel, handler:{ action in
+                                                let url = URL(string: "http://52.22.1.14:3000/library/api/v1/checkedout")!
+                                                var request = URLRequest(url: url)
+                                                request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+                                                request.httpMethod = "POST"
+                                                let postString = "sid=\(sid!)&isbn=\(isbn!)&key=bsvr9N5wrGJVDz98UvBMnGt8"
+                                                request.httpBody = postString.data(using: .utf8)
+                                                let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                                                    guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                                                        print("error=\(String(describing: error))")
+                                                        return
+                                                    }
+                                                    
+                                                    if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+                                                        print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                                                        print("response = \(String(describing: response))")
+                                                    }
+                                                    
+                                                    let responseString = String(data: data, encoding: .utf8)
+                                                    print("responseString = \(String(describing: responseString))")
+                                                }
+                                                task.resume()
+                                                self.searching = false
+                                            }))
+                                            alertController.addAction(UIAlertAction(title: "Cancel", style: .default, handler:{ action in
+                                                self.searching = false
+                                            }))
+                                            self.present(alertController, animated: true, completion: nil)
+                                        }
                                     }
                                 }
                             }
@@ -161,6 +232,7 @@ class CameraViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
                 }
             })
             task.resume()
+            }
             
         }
     }

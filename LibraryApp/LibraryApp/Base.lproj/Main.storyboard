@@ -27,7 +27,7 @@
                                 <rect key="frame" x="152" y="303" width="71" height="32"/>
                                 <color key="backgroundColor" red="0.72374682739999996" green="0.0" blue="0.067541734670000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="71" id="Jgq-St-gce"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="71" id="Jgq-St-gce"/>
                                     <constraint firstAttribute="height" constant="32" id="pHB-MA-MQj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
@@ -96,6 +96,7 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="My Books" id="T5d-d0-dXh"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="U9t-EZ-57o">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
                     <connections>
@@ -135,7 +136,7 @@
                                 <rect key="frame" x="158" y="366" width="59" height="31"/>
                                 <color key="backgroundColor" red="0.72374682739999996" green="0.0" blue="0.067541734670000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="59" id="BW2-c8-bDd"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="59" id="BW2-c8-bDd"/>
                                     <constraint firstAttribute="height" constant="31" id="DIs-1a-KTp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
