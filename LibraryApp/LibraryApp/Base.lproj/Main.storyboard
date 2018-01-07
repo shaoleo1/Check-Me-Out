@@ -241,6 +241,10 @@
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" image="search" selectedImage="search" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="searchBar" destination="Afd-yX-JYe" id="9Gw-23-Wh0"/>
+                        <outlet property="tableView" destination="0iG-Ua-tbP" id="z7X-3u-Onl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
                 <searchDisplayController id="wRP-bj-CuH">

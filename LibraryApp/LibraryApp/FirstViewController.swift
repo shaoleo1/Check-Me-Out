@@ -132,10 +132,30 @@ class FirstViewController: UITableViewController {
                                                     }
                                                 } catch {
                                                     print(error)
+                                                    self.numLooped += 1
+                                                    if (self.doneLoad == false && self.numLooped == self.myBooks.count) {
+                                                        self.doneLoad = true
+                                                        self.refreshControl?.endRefreshing()
+                                                        self.bookTableView.reloadData()
+                                                    }
+                                                }
+                                            } else {
+                                                self.numLooped += 1
+                                                if (self.doneLoad == false && self.numLooped == self.myBooks.count) {
+                                                    self.doneLoad = true
+                                                    self.refreshControl?.endRefreshing()
+                                                    self.bookTableView.reloadData()
                                                 }
                                             }
                                         }
                                     }
+                                }
+                            } else {
+                                self.numLooped += 1
+                                if (self.doneLoad == false && self.numLooped == self.myBooks.count) {
+                                    self.doneLoad = true
+                                    self.refreshControl?.endRefreshing()
+                                    self.bookTableView.reloadData()
                                 }
                             }
                         }
@@ -158,6 +178,9 @@ class FirstViewController: UITableViewController {
     @objc func refresh(_ refreshControl: UIRefreshControl) {
         numLooped = 0
         doneLoad = false
+        self.myBooks = []
+        self.myBookISBNs = []
+        self.myBookDueDates = []
         
         let defaults = UserDefaults.standard
         let sid = defaults.object(forKey: "sid") as? String
@@ -180,9 +203,6 @@ class FirstViewController: UITableViewController {
                         if let dict = array[0] as? [String: Any] {
                             // Creates a dictionary of the current term details (e.g. term, definition, term number).
                             if let data = dict["data"] as? [[String: Any]] {
-                                self.myBooks = []
-                                self.myBookISBNs = []
-                                self.myBookDueDates = []
                                 for book in data {
                                     if let title = book["title"] as? String {
                                         if let author = book["author"] as? String {
@@ -202,6 +222,11 @@ class FirstViewController: UITableViewController {
                     }
                 } catch {
                     print("error")
+                }
+                if self.myBooks.count == 0 {
+                    self.doneLoad = true
+                    self.refreshControl?.endRefreshing()
+                    self.bookTableView.reloadData()
                 }
             }
         })
