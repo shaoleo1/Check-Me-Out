@@ -49,8 +49,8 @@
 * A book should already be checked out and overdue, titled `Fast Food Nation`.
 * To check out a book, tap on the camera tab in the middle of the bar at the bottom. Simply point your camera at the barcode of any book to scan it. Samples books to test that are in stock at the library are `To Kill a Mockingbird` and `Johnny Tremain`. Scanned books that are not in stock at the library will not be able to be checked out.
 * If you do not have these books, you may scan the ISBN barcodes here:
-To Kill a Mockingbird: ![To Kill a Mockingbird](https://i.imgur.com/VEI3ycZ.png)
-Johnny Tremain: ![Johnny Tremain](https://i.imgur.com/Ok4axQq.png)
+* To Kill a Mockingbird: ![To Kill a Mockingbird](https://i.imgur.com/VEI3ycZ.png)
+* Johnny Tremain: ![Johnny Tremain](https://i.imgur.com/Ok4axQq.png)
 * To reserve books, tap on the search tab to search books. Books that are in stock (quantity > 0) can be reserved.
 * Fines can be found on the settings tab and notifications are sent once every day at 3:10PM ET for overdue books and start the day before the book is due.
 
