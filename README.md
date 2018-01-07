@@ -49,8 +49,7 @@
 * A book should already be checked out and overdue, titled `Fast Food Nation`.
 * To check out a book, tap on the camera tab in the middle of the bar at the bottom. Simply point your camera at the barcode of any book to scan it. Samples books to test that are in stock at the library are `To Kill a Mockingbird` and `Johnny Tremain`. Scanned books that are not in stock at the library will not be able to be checked out.
 * If you do not have these books, you may scan the ISBN barcodes here:
-* To Kill a Mockingbird: ![To Kill a Mockingbird](https://i.imgur.com/VEI3ycZ.png)
-* Johnny Tremain: ![Johnny Tremain](https://i.imgur.com/Ok4axQq.png)
+* To Kill a Mockingbird: ![To Kill a Mockingbird](https://i.imgur.com/VEI3ycZ.png)  Johnny Tremain: ![Johnny Tremain](https://i.imgur.com/Ok4axQq.png)
 * To reserve books, tap on the search tab to search books. Books that are in stock (quantity > 0) can be reserved.
 * Fines can be found on the settings tab and notifications are sent once every day at 3:10PM ET for overdue books and start the day before the book is due.
 
@@ -75,7 +74,7 @@
 If a signing error occurs while compiling or running an app please do the following:
 
 1. Go to Xcode -> Preferences, and select Accounts. Here, select the + button in the bottom left corner and sign into your Apple Developer Account. If you do not have an Apple Developer Account, follow [these instuctions](https://9to5mac.com/2016/03/27/how-to-create-free-apple-developer-account-sideload-apps/) to make an account (It should work with a normal Apple ID)
-2.  Select FBLA2017 (project file) in the Project Navigator (located on the left)
+2. Select Check Me Out (project file) in the Project Navigator (located on the left)
 3. Select the "General" tab 
 4. Under Identity: Change the bundle ID, replacing com.namehere with any unique domain that you would like to use
 ![Select Run](https://raw.githubusercontent.com/lukejmann/FBLA2017/master/Photoshop/Screen%20Shot%202017-05-13%20at%209.10.51%20AM.png)
