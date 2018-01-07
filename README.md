@@ -29,7 +29,7 @@
 * Fully functional and fast self-made backend API using Node.js, Express.js, and MySQL hosted on Amazon Web Services Elastic Compute Cloud (AWS EC2) instance.
 * View a detailed map of the school library.
 * View fines and other account info.
-* Self-explanatory user interface and app navigation.
+* Simple and self-explanatory user interface and app navigation.
 * Ability to navigate to, share, and communicate through social media.
 
 ### Services Used
@@ -38,6 +38,7 @@
 * Node.js (programming language (backend API))
 * Express.js (web app framework for Node.js (backend API))
 * MySQL (relational database management system/RDBMS using structured query language/SQL (backend API))
+* Google Books API (search and retrieve information about books)
 * GitHub (collaboration and source/version control)
 
 ### GUI Screenshots
@@ -45,12 +46,13 @@
 
 ### How to use Check Me Out
 * A test student account is already in place. The ID is `311620`.
-* The Global group has been created with sample items, many of which highlight app features
-* If you would like to change groups, log out and sign back in
-* To purchase an item, reach out to the seller via the "Seller" chat. If you would like to just ask a question, ask the question in the "Item" or global chat
-* If you have successfully sold an item, select that item in the browse section (or in the "Selling" section of the profile view) and select "Mark as Sold" This will remove the item from sale
-* Tap the center of the screen while on an item (in the browse section) to go to the next item
-
+* A book should already be checked out and overdue, titled `Fast Food Nation`.
+* To check out a book, tap on the camera tab in the middle of the bar at the bottom. Simply point your camera at the barcode of any book to scan it. Samples books to test that are in stock at the library are `To Kill a Mockingbird` and `Johnny Tremain`. Scanned books that are not in stock at the library will not be able to be checked out.
+* If you do not have these books, you may scan the ISBN barcodes here:
+To Kill a Mockingbird: ![To Kill a Mockingbird](https://i.imgur.com/VEI3ycZ.png)
+Johnny Tremain: ![Johnny Tremain](https://i.imgur.com/Ok4axQq.png)
+* To reserve books, tap on the search tab to search books. Books that are in stock (quantity > 0) can be reserved.
+* Fines can be found on the settings tab and notifications are sent once every day at 3:10PM ET for overdue books and start the day before the book is due.
 
 
 ## Installation
