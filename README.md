@@ -41,7 +41,7 @@
 * Google Books API (search and retrieve information about books)
 * GitHub (collaboration and source/version control)
 
-### GUI Screenshots
+### Screenshots
 [Download PDF]()
 
 ### How to use Check Me Out
@@ -87,7 +87,7 @@ If a signing error occurs while compiling or running an app please do the follow
 ### Troubleshooting 
 | Issue | Solution |
 |-------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
-|After Checking Out the repository, Xcode does not load the project| This is an Xcode bug, quit Xcode, naviagate to the directory that the Xcode project is stored in, delete the DerivedData folder, and open `FBLA2017.xcworkspace` OR  delete the downloaded folder and restart the Intructions For Testing, this time changing the download directory location|
+| After Checking Out the repository, Xcode does not load the project| This is an Xcode bug, quit Xcode, naviagate to the directory that the Xcode project is stored in, delete the DerivedData folder, and open `FBLA2017.xcworkspace` OR  delete the downloaded folder and restart the Intructions For Testing, this time changing the download directory location|
 | When running on a physical device, the developer is not trusted.  | On the iPhone, go to Settings -> General -> Device Management-> And select "Trust" for your developer profile |
 | App appears as a black screen | If running on a simulator, the simulator may be booting up, otherwise, try running the app again |
 | "The run destination is not valid" | Ensure that the app running on an iOS device or simulator that is iOS 10.2+  |
@@ -112,7 +112,7 @@ If a signing error occurs while compiling or running an app please do the follow
   press the download ZIP button (⬆️) and extract the ZIP file to the desired folder.
 
 2. Open `FBLA2017.xcworkspace`
-<!---7. Go to the top left corner, select `FBLA2017` as the Scheme, chose a device to run the app on,  and press the run button (play button)
+<!---7. Go to the top left corner, select `Check Me Out` as the Scheme, choose a device to run the app on, and press the run button (play button)
 ![Select Run](https://raw.githubusercontent.com/lukejmann/FBLA2017/master/Photoshop/Screen%20Shot%202017-05-05%20at%203.38.44%20PM.png)
 8.  If the app is being run on a physical device, the app and developer profile must be approved in the settings menu of the device (Settings –> General –> Device Management)-->
 
