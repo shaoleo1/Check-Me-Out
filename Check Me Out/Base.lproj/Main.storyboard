@@ -18,7 +18,7 @@
         <!--Settings-->
         <scene sceneID="mbs-Ck-aOc">
             <objects>
-                <viewController id="j89-em-Kpo" customClass="Account" customModule="LibraryApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="j89-em-Kpo" customClass="Account" customModule="Check_Me_Out" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lq6-5e-1eS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,7 +38,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rwd-TE-s1q">
-                                <rect key="frame" x="-1413" y="-944" width="2942" height="2896"/>
+                                <rect key="frame" x="16" y="461" width="55" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Facebook.png">
                                     <attributedString key="attributedTitle"/>
@@ -62,12 +62,64 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zre-Rb-Uam" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="933.60000000000002" y="375.56221889055473"/>
+            <point key="canvasLocation" x="1022" y="1508"/>
+        </scene>
+        <!--Item 2-->
+        <scene sceneID="cQ3-xj-SWK">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QF5-Td-mqj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="MuQ-t4-xe9" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x9z-te-bQa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="6yg-Ph-GPg"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="lFM-rZ-B1R"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="3455" y="368"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="VuD-28-g1R">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3gR-XD-OLJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="jVz-c7-3ge" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zIu-l1-KSQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="8QE-zK-yRh"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="SLa-zV-ZXc"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="3455" y="-294"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="mrB-rl-gsY">
+            <objects>
+                <tabBarController id="gLz-qM-JLi" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YXM-oo-IxZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="jVz-c7-3ge" kind="relationship" relationship="viewControllers" id="gbf-EP-YJr"/>
+                        <segue destination="MuQ-t4-xe9" kind="relationship" relationship="viewControllers" id="peX-fF-ctq"/>
+                        <segue destination="nub-th-gd7" kind="relationship" relationship="viewControllers" id="qgb-YR-eWu"/>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="hAw-oW-jcX"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5WY-9P-sjW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1980" y="0.0"/>
         </scene>
         <!--My Books-->
         <scene sceneID="XFZ-Mw-5xD">
             <objects>
-                <tableViewController id="e8h-wt-qn9" customClass="FirstViewController" customModule="LibraryApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="e8h-wt-qn9" customClass="FirstViewController" customModule="Check_Me_Out" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="D6Z-9F-IZO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -126,7 +178,7 @@
         <!--LoginVC-->
         <scene sceneID="lUl-T7-1P8">
             <objects>
-                <viewController storyboardIdentifier="LoginVC" id="QTu-19-9ck" customClass="LoginVC" customModule="LibraryApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" id="QTu-19-9ck" customClass="LoginVC" customModule="Check_Me_Out" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kHv-df-uYU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -183,12 +235,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NQ2-uc-GQL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2.3999999999999999" y="-816.34182908545733"/>
+            <point key="canvasLocation" x="934" y="-1138"/>
         </scene>
         <!--Search-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="LibraryApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="Check_Me_Out" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -256,12 +308,12 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-1018.4" y="375.56221889055473"/>
+            <point key="canvasLocation" x="1022" y="756"/>
         </scene>
         <!--Camera-->
         <scene sceneID="N24-d8-TqP">
             <objects>
-                <viewController id="nub-th-gd7" customClass="CameraViewController" customModule="LibraryApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="nub-th-gd7" customClass="CameraViewController" customModule="Check_Me_Out" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2d2-WP-oSa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -272,12 +324,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mMl-p0-FjK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2.3999999999999999" y="850.52473763118451"/>
+            <point key="canvasLocation" x="1023" y="0.0"/>
         </scene>
         <!--Map-->
         <scene sceneID="wi2-Fo-i3T">
             <objects>
-                <viewController id="a8W-3f-1DQ" customClass="Search" customModule="LibraryApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="a8W-3f-1DQ" customClass="Search" customModule="Check_Me_Out" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="srO-lb-WFx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -313,7 +365,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TjJ-iG-8ae" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="933.60000000000002" y="-391.75412293853077"/>
+            <point key="canvasLocation" x="1022" y="-720"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -346,4 +398,8 @@
         <image name="search" width="35" height="35"/>
         <image name="settings" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="qgb-YR-eWu"/>
+        <segue reference="hAw-oW-jcX"/>
+    </inferredMetricsTieBreakers>
 </document>

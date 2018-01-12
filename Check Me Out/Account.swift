@@ -36,7 +36,7 @@ class Account: UIViewController {
                 let post = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
                 post?.setInitialText("Come check out this app!")
                 self.present(post!, animated: true, completion: nil)
-            }
+            } else {}
         }
         
         //adds action to the alert
@@ -45,6 +45,8 @@ class Account: UIViewController {
         //shows the alert
         self.present(alert, animated: true, completion: nil)
     }
+    
+    func showAlert(){}
     
     @IBAction func logOutButton(_ sender: UIButton) {
         let defaults = UserDefaults.standard
