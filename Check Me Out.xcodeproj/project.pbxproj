@@ -17,6 +17,7 @@
 		86393FBF1FE342630059507F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86393FBD1FE342630059507F /* LaunchScreen.storyboard */; };
 		86393FCA1FE342630059507F /* LibraryAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86393FC91FE342630059507F /* LibraryAppTests.swift */; };
 		86393FD51FE342630059507F /* LibraryAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86393FD41FE342630059507F /* LibraryAppUITests.swift */; };
+		865D578E20099AEB00184825 /* Twitter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 865D578D20099AEA00184825 /* Twitter.jpg */; };
 		86AC46641FE9FB9A003FEB11 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AC46631FE9FB9A003FEB11 /* CameraViewController.swift */; };
 		86AC46681FEA068A003FEB11 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AC46671FEA068A003FEB11 /* Search.swift */; };
 		86AC466A1FEA069B003FEB11 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AC46691FEA069B003FEB11 /* Account.swift */; };
@@ -59,6 +60,7 @@
 		86393FD01FE342630059507F /* Check Me OutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Check Me OutUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86393FD41FE342630059507F /* LibraryAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryAppUITests.swift; sourceTree = "<group>"; };
 		86393FD61FE342630059507F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		865D578D20099AEA00184825 /* Twitter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Twitter.jpg; sourceTree = "<group>"; };
 		86AC46631FE9FB9A003FEB11 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		86AC46671FEA068A003FEB11 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		86AC46691FEA069B003FEB11 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				86AC466F1FF41840003FEB11 /* LoginVC.swift */,
 				165185501FF8430C00477518 /* SCHOOL_MAP.JPEG */,
 				86AC467B1FFAEA52003FEB11 /* Facebook.png */,
+				865D578D20099AEA00184825 /* Twitter.jpg */,
 				86393FB81FE342630059507F /* Main.storyboard */,
 				86393FBB1FE342630059507F /* Assets.xcassets */,
 				86393FBD1FE342630059507F /* LaunchScreen.storyboard */,
@@ -274,6 +277,7 @@
 			files = (
 				165185511FF8430C00477518 /* SCHOOL_MAP.JPEG in Resources */,
 				86AC467C1FFAEA52003FEB11 /* Facebook.png in Resources */,
+				865D578E20099AEB00184825 /* Twitter.jpg in Resources */,
 				86393FBF1FE342630059507F /* LaunchScreen.storyboard in Resources */,
 				86393FBC1FE342630059507F /* Assets.xcassets in Resources */,
 				86393FBA1FE342630059507F /* Main.storyboard in Resources */,
