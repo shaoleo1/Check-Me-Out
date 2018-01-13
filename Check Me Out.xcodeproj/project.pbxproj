@@ -13,6 +13,7 @@
 		16E4DEBB2009DC380037A431 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 16E4DEBA2009DC380037A431 /* Podfile */; };
 		16E4DEC02009E72A0037A431 /* TWITTER_LOGO.png in Resources */ = {isa = PBXBuildFile; fileRef = 16E4DEBE2009E72A0037A431 /* TWITTER_LOGO.png */; };
 		16E4DEC12009E72A0037A431 /* FACEBOOK_LOGO.png in Resources */ = {isa = PBXBuildFile; fileRef = 16E4DEBF2009E72A0037A431 /* FACEBOOK_LOGO.png */; };
+		16E4DEC3200A99740037A431 /* BookDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E4DEC2200A99740037A431 /* BookDetailsVC.swift */; };
 		86393FB31FE342630059507F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86393FB21FE342630059507F /* AppDelegate.swift */; };
 		86393FB51FE342630059507F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86393FB41FE342630059507F /* FirstViewController.swift */; };
 		86393FB71FE342630059507F /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86393FB61FE342630059507F /* SecondViewController.swift */; };
@@ -51,6 +52,7 @@
 		16E4DEBA2009DC380037A431 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		16E4DEBE2009E72A0037A431 /* TWITTER_LOGO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TWITTER_LOGO.png; sourceTree = "<group>"; };
 		16E4DEBF2009E72A0037A431 /* FACEBOOK_LOGO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FACEBOOK_LOGO.png; sourceTree = "<group>"; };
+		16E4DEC2200A99740037A431 /* BookDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsVC.swift; sourceTree = "<group>"; };
 		2713F003D22A7BD7DCF62E30 /* Pods-Check Me Out.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Check Me Out.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Check Me Out/Pods-Check Me Out.debug.xcconfig"; sourceTree = "<group>"; };
 		6D4AF1B2F60E114DCCDCBF72 /* Pods_Check_Me_Out.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Check_Me_Out.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86393FAF1FE342630059507F /* Check Me Out.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Check Me Out.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +155,7 @@
 				86AC46671FEA068A003FEB11 /* Search.swift */,
 				86AC46691FEA069B003FEB11 /* Account.swift */,
 				86AC466F1FF41840003FEB11 /* LoginVC.swift */,
+				16E4DEC2200A99740037A431 /* BookDetailsVC.swift */,
 				165185501FF8430C00477518 /* SCHOOL_MAP.JPEG */,
 				16E4DEBF2009E72A0037A431 /* FACEBOOK_LOGO.png */,
 				16E4DEBE2009E72A0037A431 /* TWITTER_LOGO.png */,
@@ -382,6 +385,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16E4DEC3200A99740037A431 /* BookDetailsVC.swift in Sources */,
 				86AC46641FE9FB9A003FEB11 /* CameraViewController.swift in Sources */,
 				86393FB71FE342630059507F /* SecondViewController.swift in Sources */,
 				86AC46701FF41840003FEB11 /* LoginVC.swift in Sources */,

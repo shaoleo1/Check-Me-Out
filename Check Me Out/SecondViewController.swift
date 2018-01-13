@@ -118,7 +118,7 @@ class SecondViewController: UIViewController, UISearchBarDelegate, UITableViewDe
                                     if let imageLinks = volumeInfo["imageLinks"] as? [String: String] {
                                         self.bookThumbnails.append(imageLinks["smallThumbnail"]!)
                                     } else {
-                                        self.bookThumbnails.append("")
+                                        self.bookThumbnails.append("https://i.imgur.com/JIGQIq7.png")
                                     }
                                     if let description = volumeInfo["description"] as? String {
                                         self.bookDescriptions.append(description)
@@ -211,25 +211,32 @@ class SecondViewController: UIViewController, UISearchBarDelegate, UITableViewDe
                                         if let book = data[0] as? [String: Any] {
                                             if let quantity = book["currentquantity"] as? Int {
                                                 cell?.detailTextLabel?.text = "In stock: \(quantity)"
+                                                self.bookStockQuantities.append(quantity)
                                             } else {
                                                 cell?.detailTextLabel?.text = "In stock: 0"
+                                                self.bookStockQuantities.append(0)
                                             }
                                         } else {
                                             cell?.detailTextLabel?.text = "In stock: 0"
+                                            self.bookStockQuantities.append(0)
                                         }
                                     } else {
                                         cell?.detailTextLabel?.text = "In stock: 0"
+                                        self.bookStockQuantities.append(0)
                                     }
                                     self.numLooped += 1
                                 } else {
                                     cell?.detailTextLabel?.text = "In stock: 0"
+                                    self.bookStockQuantities.append(0)
                                 }
                             } else {
                                 cell?.detailTextLabel?.text = "In stock: 0"
+                                self.bookStockQuantities.append(0)
                             }
                         } catch {
                             print("error")
                             cell?.detailTextLabel?.text = "In stock: 0"
+                            self.bookStockQuantities.append(0)
                         }
                     }
                 })
@@ -259,6 +266,24 @@ class SecondViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     // method to run when table view cell is tapped
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You tapped cell number \(indexPath.row).")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let bookDetailsVC = storyboard.instantiateViewController(withIdentifier: "BookDetailsVC") as! BookDetailsVC
+        bookDetailsVC.book = "\(books[indexPath.row]) by \(bookAuthors[indexPath.row])"
+        do {
+            let url = URL(string: self.bookThumbnails[indexPath.row])
+            let data = try Data(contentsOf: url!)
+            bookDetailsVC.image = UIImage(data: data)
+        } catch {
+            print(error)
+        }
+        bookDetailsVC.quantity = bookStockQuantities[indexPath.row]
+        bookDetailsVC.desc = bookDescriptions[indexPath.row]
+        bookDetailsVC.rating = bookRatings[indexPath.row]
+        bookDetailsVC.category = bookCategories[indexPath.row]
+        bookDetailsVC.publisher = bookPublishers[indexPath.row]
+        bookDetailsVC.pageCount = bookPageCounts[indexPath.row]
+        bookDetailsVC.isbn = bookISBNs[indexPath.row]
+        self.present(bookDetailsVC, animated: true, completion: nil)
     }
     
 }

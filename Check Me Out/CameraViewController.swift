@@ -183,9 +183,22 @@ class CameraViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
                                                     
                                                     let responseString = String(data: data, encoding: .utf8)
                                                     print("responseString = \(String(describing: responseString))")
+                                                    
+                                                    if responseString == "success" {
+                                                        let alertController = UIAlertController(title: "Checked Out", message: "You have successfully checked out \(title) by \(combinedAuthors) for 14 school days.", preferredStyle: .alert)
+                                                        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler:{ action in
+                                                            self.searching = false
+                                                        }))
+                                                        self.present(alertController, animated: true, completion: nil)
+                                                    } else {
+                                                        let alertController = UIAlertController(title: "Error", message: responseString, preferredStyle: .alert)
+                                                        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler:{ action in
+                                                            self.searching = false
+                                                        }))
+                                                        self.present(alertController, animated: true, completion: nil)
+                                                    }
                                                 }
                                                 task.resume()
-                                                self.searching = false
                                             }))
                                             alertController.addAction(UIAlertAction(title: "Cancel", style: .default, handler:{ action in
                                                 self.searching = false
@@ -213,9 +226,22 @@ class CameraViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
                                                     
                                                     let responseString = String(data: data, encoding: .utf8)
                                                     print("responseString = \(String(describing: responseString))")
+                                                    
+                                                    if responseString == "success" {
+                                                        let alertController = UIAlertController(title: "Checked Out", message: "You have successfully checked out \(title) for 14 school days.", preferredStyle: .alert)
+                                                        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler:{ action in
+                                                            self.searching = false
+                                                        }))
+                                                        self.present(alertController, animated: true, completion: nil)
+                                                    } else {
+                                                        let alertController = UIAlertController(title: "Error", message: responseString, preferredStyle: .alert)
+                                                        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler:{ action in
+                                                            self.searching = false
+                                                        }))
+                                                        self.present(alertController, animated: true, completion: nil)
+                                                    }
                                                 }
                                                 task.resume()
-                                                self.searching = false
                                             }))
                                             alertController.addAction(UIAlertAction(title: "Cancel", style: .default, handler:{ action in
                                                 self.searching = false
