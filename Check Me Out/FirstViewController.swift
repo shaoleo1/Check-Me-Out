@@ -27,6 +27,8 @@ class FirstViewController: UITableViewController {
         // Do any additional setup after loading the view, typically from a nib.
         let defaults = UserDefaults.standard
         let sid = defaults.object(forKey: "sid") as? String
+        let myApplication = UIApplication.shared.delegate as! AppDelegate
+        myApplication.registerPN(UIApplication.shared)
         var request = URLRequest(url: URL(string: "http://52.22.1.14:3000/library/api/v1/checkedout?sid=" + sid! + "&key=bsvr9N5wrGJVDz98UvBMnGt8")!)
         // Sets the http method to GET which means GETting data FROM the API. There are two methods, GET and POST. POST means POSTing data TO the API. In this case, we're using GET.
         request.httpMethod = "GET"
@@ -44,7 +46,7 @@ class FirstViewController: UITableViewController {
                     if let array = json as? [Any] {
                         // Creates an array of the returned terms.
                         if let dict = array[0] as? [String: Any] {
-                            // Creates a dictionary of the current term details (e.g. term, definition, term number).
+                            // Creates a dictionary of the book data.
                             if let data = dict["data"] as? [[String: Any]] {
                                 for book in data {
                                     if let title = book["title"] as? String {
@@ -112,12 +114,11 @@ class FirstViewController: UITableViewController {
                         // Converts and saves the returned data into a variable called 'json' in appropriate JSON formatting.
                         let json = try JSONSerialization.jsonObject(with: data!, options: [])                // Creates a dictionary from the JSON file to look up the value for the key given.
                         if let dictionary = json as? [String: Any] {
-                            // Creates an array of the returned terms.
+                            // Creates an array of the returned books.
                             if let items = dictionary["items"] as? [Any] {
-                                // Creates a dictionary of the current term details (e.g. term, definition, term number).
+                                // Creates a dictionary of the books' info.
                                 if let nestedDict = items[0] as? [String: Any] {
                                     if let volumeInfo = nestedDict["volumeInfo"] as? [String: Any] {
-                                        // Looks up the term and saves it into the variable 'term'.
                                         if let imageLinks = volumeInfo["imageLinks"] as? [String: String] {
                                             if let smallThumbnail = imageLinks["smallThumbnail"] {
                                                 do {
