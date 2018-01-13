@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -20,27 +20,36 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By Leo Shao and Vicky Zheng" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v08-cX-OJU">
-                                <rect key="frame" x="58" y="330" width="259" height="27"/>
+                                <rect key="frame" x="77.666666666666686" y="422.66666666666669" width="259" height="27.333333333333314"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check Me Out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vnf-82-smc">
-                                <rect key="frame" x="25" y="236" width="325" height="69"/>
+                                <rect key="frame" x="44.666666666666657" y="343.66666666666669" width="325" height="69"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="fwX-UF-Mt9">
+                                <rect key="frame" x="82" y="73.666666666666686" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="cv0-Ic-jMx"/>
+                                    <constraint firstAttribute="height" constant="250" id="spp-sx-dhH"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="v08-cX-OJU" firstAttribute="top" secondItem="Vnf-82-smc" secondAttribute="bottom" constant="25" id="3QH-Ac-X6I"/>
+                            <constraint firstItem="v08-cX-OJU" firstAttribute="top" secondItem="Vnf-82-smc" secondAttribute="bottom" constant="10" id="3QH-Ac-X6I"/>
+                            <constraint firstItem="Vnf-82-smc" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="3cn-Ob-uUf"/>
                             <constraint firstItem="Vnf-82-smc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="44x-Gk-Kcy"/>
-                            <constraint firstItem="v08-cX-OJU" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="PlA-bX-22W"/>
+                            <constraint firstItem="fwX-UF-Mt9" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="PUP-JN-8bb"/>
+                            <constraint firstItem="Vnf-82-smc" firstAttribute="top" secondItem="fwX-UF-Mt9" secondAttribute="bottom" constant="20" id="XVc-5C-0KJ"/>
                             <constraint firstItem="v08-cX-OJU" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zeY-Zv-a1L"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -48,7 +57,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+            <point key="canvasLocation" x="50.724637681159422" y="374.18478260869568"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="1024" height="1024"/>
+    </resources>
 </document>
