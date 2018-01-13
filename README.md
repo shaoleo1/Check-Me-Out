@@ -35,6 +35,8 @@
 ### Services Used
 * Swift 4 (programming language)
 * Xcode 9.2 (IDE)
+* Cocoapods (Dependency manager, MIT license)
+* TextFieldEffects (Custom effects for text fields, MIT license)
 * Node.js (programming language (backend API))
 * Express.js (web app framework for Node.js (backend API))
 * MySQL (relational database management system/RDBMS using structured query language/SQL (backend API))
@@ -88,7 +90,7 @@ In order for push notifications to work, your Apple ID must be enrolled in the A
 ### Troubleshooting 
 | Issue | Solution |
 |-------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
-| After Checking Out the repository, Xcode does not load the project| This is an Xcode bug, quit Xcode, naviagate to the directory that the Xcode project is stored in, delete the DerivedData folder, and open `Check Me Out.xcodeproj` OR  delete the downloaded folder and restart the Intructions For Testing, this time changing the download directory location|
+| After Checking Out the repository, Xcode does not load the project| This is an Xcode bug, quit Xcode, navigate to the directory that the Xcode project is stored in, delete the DerivedData folder, and open `Check Me Out.xcworkspace` OR  delete the downloaded folder and restart the Intructions For Testing, this time changing the download directory location|
 | When running on a physical device, the developer is not trusted.  | On the iPhone, go to Settings -> General -> Device Management-> And select "Trust" for your developer profile |
 | App appears as a black screen | If running on a simulator, the simulator may be booting up, otherwise, try running the app again |
 | "The run destination is not valid" | Ensure that the app running on an iOS device or simulator that is iOS 10.0+  |
