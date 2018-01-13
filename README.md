@@ -47,14 +47,15 @@
 [Download PDF]()
 
 ### How to use Check Me Out
-* A test student account is already in place. The ID is `311620`.
+* A test student account (teacher accounts are the same) is already in place. The ID is `311620`.
 * A book should already be checked out and overdue, titled `Fast Food Nation`.
 * To check out a book, tap on the camera tab in the middle of the bar at the bottom. Simply point your camera at the barcode of any book to scan it. Samples books to test that are in stock at the library are `To Kill a Mockingbird` and `Johnny Tremain`. Scanned books that are not in stock at the library will not be able to be checked out.
 * If you do not have these books, you may scan the ISBN barcodes here:
 * To Kill a Mockingbird: ![To Kill a Mockingbird](https://i.imgur.com/VEI3ycZ.png)  Johnny Tremain: ![Johnny Tremain](https://i.imgur.com/Ok4axQq.png)
-* To reserve books, tap on the search tab to search books. Books that are in stock (quantity > 0) can be reserved.
+* To reserve books, tap on the search tab to search books. Books that are in stock (quantity > 0) such as Fast Food Nation and Johnny Tremain can be reserved.
 * Fines can be found on the settings tab and notifications are sent once every day at 3:10PM ET for overdue books and start the day before the book is due.
-
+* A test librarian account is already in place. The ID is `ehthslibrarian`.
+* Librarians may scan returned books from students and teachers, add new books to the library, and manage/view student info/logs.
 
 ## Installation
 ### Prerequisites
