@@ -28,6 +28,7 @@
 * Fully functional and fast self-made backend API using Node.js, Express.js, and MySQL hosted on Amazon Web Services Elastic Compute Cloud (AWS EC2) instance.
 * View a detailed map of the school library.
 * View fines and other account info.
+* Librarian account for adding new books to the library, checking in returned books, and viewing student information/logs.
 * Simple and self-explanatory user interface and app navigation.
 * Ability to navigate to, share, and communicate through social media.
 
