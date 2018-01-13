@@ -26,10 +26,6 @@ class Account: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func open(_ url: URL,
-              options: [String : Any] = [:],
-              completionHandler completion: ((Bool) -> Void)? = nil) {}
-    
     @IBAction func shareToFacebook(_ sender: Any) {
         //alert
         let alert = UIAlertController(title: "Share", message: "Share this app on Facebook!", preferredStyle: .actionSheet)
@@ -39,11 +35,34 @@ class Account: UIViewController {
             //checks if user is connected to Facebook
             if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook) {
                
-               let post = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
-               post?.setInitialText("Come check out this app!")
-               self.present(post!, animated: true, completion: nil)
+               let post = SLComposeViewController(forServiceType: SLServiceTypeFacebook)!
+               post.setInitialText("Come check out this app!")
+               self.present(post, animated: true, completion: nil)
                 print("yes")
             } else {self.showAlert(service: "Facebook")}
+        }
+
+        //adds action to the alert
+        alert.addAction(share)
+        
+        //shows the alert
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func shareToTwitter(_ sender: Any) {
+        //alert
+        let alert = UIAlertController(title: "Share", message: "Share this app on Twitter!", preferredStyle: .actionSheet)
+        
+        //action
+        let share = UIAlertAction(title: "Share to Twitter", style: .default) {(ACTION) in
+            //checks if user is connected to Twitter
+            if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter) {
+                
+                let post = SLComposeViewController(forServiceType: SLServiceTypeTwitter)!
+                post.setInitialText("Come check out this app!")
+                self.present(post, animated: true, completion: nil)
+                print("yes")
+            } else {self.showAlert(service: "Twitter")}
         }
         
         //adds action to the alert

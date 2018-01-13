@@ -43,13 +43,26 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rwd-TE-s1q">
-                                <rect key="frame" x="16" y="461" width="55" height="56"/>
+                                <rect key="frame" x="82" y="465" width="55" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Facebook.png">
                                     <attributedString key="attributedTitle"/>
                                 </state>
                                 <connections>
                                     <action selector="shareToFacebook:" destination="j89-em-Kpo" eventType="touchUpInside" id="VxT-l0-lNb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUr-Fq-JNC">
+                                <rect key="frame" x="237" y="465" width="56" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Twitter.jpg"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xtI-In-46d">
+                                <rect key="frame" x="237" y="465" width="56" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Twitter.jpg"/>
+                                <connections>
+                                    <action selector="shareToTwitter:" destination="j89-em-Kpo" eventType="touchUpInside" id="ZOu-8h-xI4"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -67,39 +80,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zre-Rb-Uam" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1022" y="1508"/>
-        </scene>
-        <!--Item 2-->
-        <scene sceneID="cQ3-xj-SWK">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QF5-Td-mqj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="MuQ-t4-xe9" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="x9z-te-bQa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="6yg-Ph-GPg"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="lFM-rZ-B1R"/>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="3455" y="368"/>
-        </scene>
-        <!--Item 1-->
-        <scene sceneID="VuD-28-g1R">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3gR-XD-OLJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="jVz-c7-3ge" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zIu-l1-KSQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="8QE-zK-yRh"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="SLa-zV-ZXc"/>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="3455" y="-294"/>
+            <point key="canvasLocation" x="1021.6" y="1507.1964017991006"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="mrB-rl-gsY">
@@ -112,8 +93,6 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="jVz-c7-3ge" kind="relationship" relationship="viewControllers" id="gbf-EP-YJr"/>
-                        <segue destination="MuQ-t4-xe9" kind="relationship" relationship="viewControllers" id="peX-fF-ctq"/>
                         <segue destination="nub-th-gd7" kind="relationship" relationship="viewControllers" id="qgb-YR-eWu"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="hAw-oW-jcX"/>
                     </connections>
@@ -451,6 +430,7 @@
     <resources>
         <image name="Facebook.png" width="50" height="50"/>
         <image name="SCHOOL_MAP.JPEG" width="2896" height="2896"/>
+        <image name="Twitter.jpg" width="399" height="399"/>
         <image name="books" width="30" height="24"/>
         <image name="camera" width="30" height="23"/>
         <image name="map" width="30" height="30"/>
