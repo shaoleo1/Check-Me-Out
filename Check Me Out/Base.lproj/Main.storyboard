@@ -141,7 +141,7 @@
                                     <constraint firstAttribute="width" constant="48" id="Q4i-ST-fhK"/>
                                     <constraint firstAttribute="height" constant="48" id="oZy-KM-qfG"/>
                                 </constraints>
-                                <state key="normal" image="facebook.png">
+                                <state key="normal" image="FACEBOOK_LOGO.png">
                                     <attributedString key="attributedTitle"/>
                                 </state>
                                 <connections>
@@ -154,7 +154,7 @@
                                     <constraint firstAttribute="width" constant="48" id="7W8-mZ-On3"/>
                                     <constraint firstAttribute="height" constant="48" id="ojJ-d6-OsO"/>
                                 </constraints>
-                                <state key="normal" image="twitter.png"/>
+                                <state key="normal" image="TWITTER_LOGO.png"/>
                                 <connections>
                                     <action selector="shareToTwitter:" destination="j89-em-Kpo" eventType="touchUpInside" id="ZOu-8h-xI4"/>
                                 </connections>
@@ -584,14 +584,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="FACEBOOK_LOGO.png" width="128" height="128"/>
         <image name="SCHOOL_MAP.JPEG" width="2896" height="2896"/>
+        <image name="TWITTER_LOGO.png" width="128" height="128"/>
         <image name="books" width="30" height="24"/>
         <image name="camera" width="30" height="23"/>
-        <image name="facebook.png" width="128" height="128"/>
         <image name="map" width="30" height="30"/>
         <image name="search" width="35" height="35"/>
         <image name="settings" width="25" height="25"/>
-        <image name="twitter.png" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="NpL-Ib-Ddh"/>

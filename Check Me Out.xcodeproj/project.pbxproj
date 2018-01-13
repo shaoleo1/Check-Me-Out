@@ -10,9 +10,9 @@
 		00FA9E402643D725CFD0F99F /* Pods_Check_Me_Out.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4AF1B2F60E114DCCDCBF72 /* Pods_Check_Me_Out.framework */; };
 		165185511FF8430C00477518 /* SCHOOL_MAP.JPEG in Resources */ = {isa = PBXBuildFile; fileRef = 165185501FF8430C00477518 /* SCHOOL_MAP.JPEG */; };
 		16E4DEAF2009A79C0037A431 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E4DEAE2009A79C0037A431 /* UserNotifications.framework */; };
-		16E4DEB82009D76E0037A431 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 16E4DEB62009D76E0037A431 /* facebook.png */; };
-		16E4DEB92009D76E0037A431 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 16E4DEB72009D76E0037A431 /* twitter.png */; };
 		16E4DEBB2009DC380037A431 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 16E4DEBA2009DC380037A431 /* Podfile */; };
+		16E4DEC02009E72A0037A431 /* TWITTER_LOGO.png in Resources */ = {isa = PBXBuildFile; fileRef = 16E4DEBE2009E72A0037A431 /* TWITTER_LOGO.png */; };
+		16E4DEC12009E72A0037A431 /* FACEBOOK_LOGO.png in Resources */ = {isa = PBXBuildFile; fileRef = 16E4DEBF2009E72A0037A431 /* FACEBOOK_LOGO.png */; };
 		86393FB31FE342630059507F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86393FB21FE342630059507F /* AppDelegate.swift */; };
 		86393FB51FE342630059507F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86393FB41FE342630059507F /* FirstViewController.swift */; };
 		86393FB71FE342630059507F /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86393FB61FE342630059507F /* SecondViewController.swift */; };
@@ -48,9 +48,9 @@
 		165185501FF8430C00477518 /* SCHOOL_MAP.JPEG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SCHOOL_MAP.JPEG; sourceTree = "<group>"; };
 		165185521FF9769F00477518 /* Check Me Out.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Check Me Out.entitlements"; sourceTree = "<group>"; };
 		16E4DEAE2009A79C0037A431 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
-		16E4DEB62009D76E0037A431 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
-		16E4DEB72009D76E0037A431 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
 		16E4DEBA2009DC380037A431 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		16E4DEBE2009E72A0037A431 /* TWITTER_LOGO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TWITTER_LOGO.png; sourceTree = "<group>"; };
+		16E4DEBF2009E72A0037A431 /* FACEBOOK_LOGO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FACEBOOK_LOGO.png; sourceTree = "<group>"; };
 		2713F003D22A7BD7DCF62E30 /* Pods-Check Me Out.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Check Me Out.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Check Me Out/Pods-Check Me Out.debug.xcconfig"; sourceTree = "<group>"; };
 		6D4AF1B2F60E114DCCDCBF72 /* Pods_Check_Me_Out.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Check_Me_Out.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86393FAF1FE342630059507F /* Check Me Out.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Check Me Out.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,8 +154,8 @@
 				86AC46691FEA069B003FEB11 /* Account.swift */,
 				86AC466F1FF41840003FEB11 /* LoginVC.swift */,
 				165185501FF8430C00477518 /* SCHOOL_MAP.JPEG */,
-				16E4DEB62009D76E0037A431 /* facebook.png */,
-				16E4DEB72009D76E0037A431 /* twitter.png */,
+				16E4DEBF2009E72A0037A431 /* FACEBOOK_LOGO.png */,
+				16E4DEBE2009E72A0037A431 /* TWITTER_LOGO.png */,
 				86393FB81FE342630059507F /* Main.storyboard */,
 				86393FBB1FE342630059507F /* Assets.xcassets */,
 				86393FBD1FE342630059507F /* LaunchScreen.storyboard */,
@@ -299,10 +299,10 @@
 			files = (
 				165185511FF8430C00477518 /* SCHOOL_MAP.JPEG in Resources */,
 				86393FBF1FE342630059507F /* LaunchScreen.storyboard in Resources */,
-				16E4DEB82009D76E0037A431 /* facebook.png in Resources */,
-				16E4DEB92009D76E0037A431 /* twitter.png in Resources */,
+				16E4DEC12009E72A0037A431 /* FACEBOOK_LOGO.png in Resources */,
 				86393FBC1FE342630059507F /* Assets.xcassets in Resources */,
 				16E4DEBB2009DC380037A431 /* Podfile in Resources */,
+				16E4DEC02009E72A0037A431 /* TWITTER_LOGO.png in Resources */,
 				86393FBA1FE342630059507F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
