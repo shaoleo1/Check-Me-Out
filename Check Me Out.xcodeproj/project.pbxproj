@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		165185511FF8430C00477518 /* SCHOOL_MAP.JPEG in Resources */ = {isa = PBXBuildFile; fileRef = 165185501FF8430C00477518 /* SCHOOL_MAP.JPEG */; };
+		16E4DEAF2009A79C0037A431 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E4DEAE2009A79C0037A431 /* UserNotifications.framework */; };
 		86393FB31FE342630059507F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86393FB21FE342630059507F /* AppDelegate.swift */; };
 		86393FB51FE342630059507F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86393FB41FE342630059507F /* FirstViewController.swift */; };
 		86393FB71FE342630059507F /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86393FB61FE342630059507F /* SecondViewController.swift */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		165185501FF8430C00477518 /* SCHOOL_MAP.JPEG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SCHOOL_MAP.JPEG; sourceTree = "<group>"; };
 		165185521FF9769F00477518 /* Check Me Out.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Check Me Out.entitlements"; sourceTree = "<group>"; };
+		16E4DEAE2009A79C0037A431 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		86393FAF1FE342630059507F /* Check Me Out.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Check Me Out.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86393FB21FE342630059507F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86393FB41FE342630059507F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16E4DEAF2009A79C0037A431 /* UserNotifications.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +94,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16E4DEAD2009A79C0037A431 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				16E4DEAE2009A79C0037A431 /* UserNotifications.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		86393FA61FE342630059507F = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +109,7 @@
 				86393FC81FE342630059507F /* LibraryAppTests */,
 				86393FD31FE342630059507F /* LibraryAppUITests */,
 				86393FB01FE342630059507F /* Products */,
+				16E4DEAD2009A79C0037A431 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
