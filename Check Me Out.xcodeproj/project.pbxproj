@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00FA9E402643D725CFD0F99F /* Pods_Check_Me_Out.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4AF1B2F60E114DCCDCBF72 /* Pods_Check_Me_Out.framework */; };
 		165185511FF8430C00477518 /* SCHOOL_MAP.JPEG in Resources */ = {isa = PBXBuildFile; fileRef = 165185501FF8430C00477518 /* SCHOOL_MAP.JPEG */; };
 		16E4DEAF2009A79C0037A431 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E4DEAE2009A79C0037A431 /* UserNotifications.framework */; };
+		16E4DEB82009D76E0037A431 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 16E4DEB62009D76E0037A431 /* facebook.png */; };
+		16E4DEB92009D76E0037A431 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 16E4DEB72009D76E0037A431 /* twitter.png */; };
+		16E4DEBB2009DC380037A431 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 16E4DEBA2009DC380037A431 /* Podfile */; };
 		86393FB31FE342630059507F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86393FB21FE342630059507F /* AppDelegate.swift */; };
 		86393FB51FE342630059507F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86393FB41FE342630059507F /* FirstViewController.swift */; };
 		86393FB71FE342630059507F /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86393FB61FE342630059507F /* SecondViewController.swift */; };
@@ -17,12 +21,10 @@
 		86393FBF1FE342630059507F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86393FBD1FE342630059507F /* LaunchScreen.storyboard */; };
 		86393FCA1FE342630059507F /* LibraryAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86393FC91FE342630059507F /* LibraryAppTests.swift */; };
 		86393FD51FE342630059507F /* LibraryAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86393FD41FE342630059507F /* LibraryAppUITests.swift */; };
-		865D578E20099AEB00184825 /* Twitter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 865D578D20099AEA00184825 /* Twitter.jpg */; };
 		86AC46641FE9FB9A003FEB11 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AC46631FE9FB9A003FEB11 /* CameraViewController.swift */; };
 		86AC46681FEA068A003FEB11 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AC46671FEA068A003FEB11 /* Search.swift */; };
 		86AC466A1FEA069B003FEB11 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AC46691FEA069B003FEB11 /* Account.swift */; };
 		86AC46701FF41840003FEB11 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AC466F1FF41840003FEB11 /* LoginVC.swift */; };
-		86AC467C1FFAEA52003FEB11 /* Facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 86AC467B1FFAEA52003FEB11 /* Facebook.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,11 @@
 		165185501FF8430C00477518 /* SCHOOL_MAP.JPEG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SCHOOL_MAP.JPEG; sourceTree = "<group>"; };
 		165185521FF9769F00477518 /* Check Me Out.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Check Me Out.entitlements"; sourceTree = "<group>"; };
 		16E4DEAE2009A79C0037A431 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		16E4DEB62009D76E0037A431 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
+		16E4DEB72009D76E0037A431 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
+		16E4DEBA2009DC380037A431 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		2713F003D22A7BD7DCF62E30 /* Pods-Check Me Out.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Check Me Out.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Check Me Out/Pods-Check Me Out.debug.xcconfig"; sourceTree = "<group>"; };
+		6D4AF1B2F60E114DCCDCBF72 /* Pods_Check_Me_Out.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Check_Me_Out.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86393FAF1FE342630059507F /* Check Me Out.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Check Me Out.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86393FB21FE342630059507F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86393FB41FE342630059507F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -60,12 +67,11 @@
 		86393FD01FE342630059507F /* Check Me OutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Check Me OutUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86393FD41FE342630059507F /* LibraryAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryAppUITests.swift; sourceTree = "<group>"; };
 		86393FD61FE342630059507F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		865D578D20099AEA00184825 /* Twitter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Twitter.jpg; sourceTree = "<group>"; };
 		86AC46631FE9FB9A003FEB11 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		86AC46671FEA068A003FEB11 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		86AC46691FEA069B003FEB11 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		86AC466F1FF41840003FEB11 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginVC.swift; path = ../LoginVC.swift; sourceTree = "<group>"; };
-		86AC467B1FFAEA52003FEB11 /* Facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Facebook.png; sourceTree = "<group>"; };
+		BD0E0B95EC7E5CDCBA4484E6 /* Pods-Check Me Out.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Check Me Out.release.xcconfig"; path = "Pods/Target Support Files/Pods-Check Me Out/Pods-Check Me Out.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +80,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16E4DEAF2009A79C0037A431 /* UserNotifications.framework in Frameworks */,
+				00FA9E402643D725CFD0F99F /* Pods_Check_Me_Out.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,18 +105,30 @@
 			isa = PBXGroup;
 			children = (
 				16E4DEAE2009A79C0037A431 /* UserNotifications.framework */,
+				6D4AF1B2F60E114DCCDCBF72 /* Pods_Check_Me_Out.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7BAA521C49C61796CCF39F78 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2713F003D22A7BD7DCF62E30 /* Pods-Check Me Out.debug.xcconfig */,
+				BD0E0B95EC7E5CDCBA4484E6 /* Pods-Check Me Out.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		86393FA61FE342630059507F = {
 			isa = PBXGroup;
 			children = (
+				16E4DEBA2009DC380037A431 /* Podfile */,
 				86393FB11FE342630059507F /* Check Me Out */,
 				86393FC81FE342630059507F /* LibraryAppTests */,
 				86393FD31FE342630059507F /* LibraryAppUITests */,
 				86393FB01FE342630059507F /* Products */,
 				16E4DEAD2009A79C0037A431 /* Frameworks */,
+				7BAA521C49C61796CCF39F78 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,8 +154,8 @@
 				86AC46691FEA069B003FEB11 /* Account.swift */,
 				86AC466F1FF41840003FEB11 /* LoginVC.swift */,
 				165185501FF8430C00477518 /* SCHOOL_MAP.JPEG */,
-				86AC467B1FFAEA52003FEB11 /* Facebook.png */,
-				865D578D20099AEA00184825 /* Twitter.jpg */,
+				16E4DEB62009D76E0037A431 /* facebook.png */,
+				16E4DEB72009D76E0037A431 /* twitter.png */,
 				86393FB81FE342630059507F /* Main.storyboard */,
 				86393FBB1FE342630059507F /* Assets.xcassets */,
 				86393FBD1FE342630059507F /* LaunchScreen.storyboard */,
@@ -170,9 +189,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 86393FD91FE342630059507F /* Build configuration list for PBXNativeTarget "Check Me Out" */;
 			buildPhases = (
+				F42440B1E168627C30F7C687 /* [CP] Check Pods Manifest.lock */,
 				86393FAB1FE342630059507F /* Sources */,
 				86393FAC1FE342630059507F /* Frameworks */,
 				86393FAD1FE342630059507F /* Resources */,
+				979DB90590723803A219799F /* [CP] Embed Pods Frameworks */,
+				AFBBFA4E2CA3D151D20F47C2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -276,10 +298,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				165185511FF8430C00477518 /* SCHOOL_MAP.JPEG in Resources */,
-				86AC467C1FFAEA52003FEB11 /* Facebook.png in Resources */,
-				865D578E20099AEB00184825 /* Twitter.jpg in Resources */,
 				86393FBF1FE342630059507F /* LaunchScreen.storyboard in Resources */,
+				16E4DEB82009D76E0037A431 /* facebook.png in Resources */,
+				16E4DEB92009D76E0037A431 /* twitter.png in Resources */,
 				86393FBC1FE342630059507F /* Assets.xcassets in Resources */,
+				16E4DEBB2009DC380037A431 /* Podfile in Resources */,
 				86393FBA1FE342630059507F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,6 +322,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		979DB90590723803A219799F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Check Me Out/Pods-Check Me Out-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Check Me Out/Pods-Check Me Out-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AFBBFA4E2CA3D151D20F47C2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Check Me Out/Pods-Check Me Out-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F42440B1E168627C30F7C687 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Check Me Out-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		86393FAB1FE342630059507F /* Sources */ = {
@@ -475,6 +552,7 @@
 		};
 		86393FDA1FE342630059507F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2713F003D22A7BD7DCF62E30 /* Pods-Check Me Out.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Check Me Out/Check Me Out.entitlements";
@@ -492,6 +570,7 @@
 		};
 		86393FDB1FE342630059507F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD0E0B95EC7E5CDCBA4484E6 /* Pods-Check Me Out.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Check Me Out/Check Me Out.entitlements";
