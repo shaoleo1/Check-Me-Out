@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginVC: UIViewController {
+class LoginVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var sidField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
@@ -25,6 +25,15 @@ class LoginVC: UIViewController {
             appDelegate.window?.rootViewController = tabBarController
         }
         loginButton.layer.cornerRadius = 2
+        
+        sidField.delegate = self
+        sidField.returnKeyType = UIReturnKeyType.go
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        sidField.resignFirstResponder()
+        login()
+        return true
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,7 +41,11 @@ class LoginVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func Login(_ sender: Any) {
+    @IBAction func loginPressed(_ sender: Any) {
+        login()
+    }
+    
+    func login() {
         var request = URLRequest(url: URL(string: "http://52.22.1.14:3000/library/api/v1/users?sid=" + sidField.text! + "&key=bsvr9N5wrGJVDz98UvBMnGt8")!)
         // Sets the http method to GET which means GETting data FROM the API. There are two methods, GET and POST. POST means POSTing data TO the API. In this case, we're using GET.
         request.httpMethod = "GET"
@@ -77,15 +90,5 @@ class LoginVC: UIViewController {
         })
         task.resume()
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

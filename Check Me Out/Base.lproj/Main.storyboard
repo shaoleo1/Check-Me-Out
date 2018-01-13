@@ -370,7 +370,7 @@
                                     </attributedString>
                                 </state>
                                 <connections>
-                                    <action selector="Login:" destination="QTu-19-9ck" eventType="touchUpInside" id="yWD-df-A5n"/>
+                                    <action selector="loginPressed:" destination="QTu-19-9ck" eventType="touchUpInside" id="2lq-PD-jhB"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmd-iv-zWV">
