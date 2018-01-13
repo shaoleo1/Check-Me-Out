@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Social
 
+
 class Account: UIViewController {
     
     @IBOutlet weak var logOutButton: UIButton!
@@ -25,6 +26,10 @@ class Account: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func open(_ url: URL,
+              options: [String : Any] = [:],
+              completionHandler completion: ((Bool) -> Void)? = nil) {}
+    
     @IBAction func shareToFacebook(_ sender: Any) {
         //alert
         let alert = UIAlertController(title: "Share", message: "Share this app on Facebook!", preferredStyle: .actionSheet)
@@ -33,10 +38,12 @@ class Account: UIViewController {
         let share = UIAlertAction(title: "Share to Facebook", style: .default) {(ACTION) in
             //checks if user is connected to Facebook
             if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook) {
-                let post = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
-                post?.setInitialText("Come check out this app!")
-                self.present(post!, animated: true, completion: nil)
-            } else {}
+               
+               let post = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+               post?.setInitialText("Come check out this app!")
+               self.present(post!, animated: true, completion: nil)
+                print("yes")
+            } else {self.showAlert(service: "Facebook")}
         }
         
         //adds action to the alert
@@ -46,7 +53,13 @@ class Account: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    func showAlert(){}
+    func showAlert(service: String) {
+        let alert = UIAlertController(title: "Error", message: "You are not connected to \(service).", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Dismiss", style: .cancel, handler: nil)
+        
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
     
     @IBAction func logOutButton(_ sender: UIButton) {
         let defaults = UserDefaults.standard
