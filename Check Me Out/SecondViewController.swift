@@ -37,6 +37,11 @@ class SecondViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         tableView.delegate = self
         tableView.dataSource = self
         self.tableView.rowHeight = 100
+        
+        let textFieldInsideUISearchBar = searchBar.value(forKey: "searchField") as? UITextField
+        textFieldInsideUISearchBar?.font = UIFont(name: "AvenirNext-Regular", size: 18)
+        let placeholderLabel = textFieldInsideUISearchBar?.value(forKey: "placeholderLabel") as? UILabel
+        placeholderLabel?.font = UIFont(name: "AvenirNext-Regular", size: 18)
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar)  {
