@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class SecondViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
     
@@ -179,88 +180,88 @@ class SecondViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     // create a cell for each table view row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // create a new cell if needed or reuse an old one
-        var cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier)
-        if cell == nil {
-            cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: cellReuseIdentifier)
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath)
         
         if books.count > 0 {
             // set the text from the data model
-            cell?.textLabel?.text = "\(self.books[indexPath.row]) by \(self.bookAuthors[indexPath.row])"
+            cell.textLabel?.text = "\(self.books[indexPath.row]) by \(self.bookAuthors[indexPath.row])"
+            var request = URLRequest(url: URL(string: "http://52.22.1.14:3000/library/api/v1/books?isbn=" + self.bookISBNs[indexPath.row] + "&key=bsvr9N5wrGJVDz98UvBMnGt8")!)
+            // Sets the http method to GET which means GETting data FROM the API. There are two methods, GET and POST. POST means POSTing data TO the API. In this case, we're using GET.
+            request.httpMethod = "GET"
+            // Sets the file type that the data will be retrieved to be JSON, which is the standard format.
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             
-            if !doneLoad {
-                var request = URLRequest(url: URL(string: "http://52.22.1.14:3000/library/api/v1/books?isbn=" + self.bookISBNs[indexPath.row] + "&key=bsvr9N5wrGJVDz98UvBMnGt8")!)
-                // Sets the http method to GET which means GETting data FROM the API. There are two methods, GET and POST. POST means POSTing data TO the API. In this case, we're using GET.
-                request.httpMethod = "GET"
-                // Sets the file type that the data will be retrieved to be JSON, which is the standard format.
-                request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-                
-                // Starts the HTTP session (connects to the API URL with the search query and GETs the data).
-                let session = URLSession.shared
-                let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
-                    DispatchQueue.main.sync {
-                        do {
-                            // Converts and saves the returned data into a variable called 'json' in appropriate JSON formatting.
-                            let json = try JSONSerialization.jsonObject(with: data!, options: [])
-                            // Creates a dictionary from the JSON file to look up the value for the key given.
-                            if let array = json as? [Any] {
-                                // Creates an array of the returned terms.
-                                if let dict = array[0] as? [String: Any] {
-                                    // Creates a dictionary of the current term details (e.g. term, definition, term number).
-                                    if let data = dict["data"] as? [Any] {
-                                        if let book = data[0] as? [String: Any] {
-                                            if let quantity = book["currentquantity"] as? Int {
-                                                cell?.detailTextLabel?.text = "In stock: \(quantity)"
-                                                self.bookStockQuantities.append(quantity)
-                                            } else {
-                                                cell?.detailTextLabel?.text = "In stock: 0"
-                                                self.bookStockQuantities.append(0)
-                                            }
-                                        } else {
-                                            cell?.detailTextLabel?.text = "In stock: 0"
-                                            self.bookStockQuantities.append(0)
+            // Starts the HTTP session (connects to the API URL with the search query and GETs the data).
+            let session = URLSession.shared
+            let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
+                do {
+                    // Converts and saves the returned data into a variable called 'json' in appropriate JSON formatting.
+                    let json = try JSONSerialization.jsonObject(with: data!, options: [])
+                    // Creates a dictionary from the JSON file to look up the value for the key given.
+                    if let array = json as? [Any] {
+                        // Creates an array of the returned terms.
+                        if let dict = array[0] as? [String: Any] {
+                            // Creates a dictionary of the current term details (e.g. term, definition, term number).
+                            if let data = dict["data"] as? [Any] {
+                                if let book = data[0] as? [String: Any] {
+                                    if let quantity = book["currentquantity"] as? Int {
+                                        DispatchQueue.main.async {
+                                            cell.detailTextLabel?.text = "In stock: \(quantity)"
                                         }
+                                        self.bookStockQuantities.append(quantity)
                                     } else {
-                                        cell?.detailTextLabel?.text = "In stock: 0"
+                                        DispatchQueue.main.async {
+                                            cell.detailTextLabel?.text = "In stock: 0"
+                                        }
                                         self.bookStockQuantities.append(0)
                                     }
-                                    self.numLooped += 1
                                 } else {
-                                    cell?.detailTextLabel?.text = "In stock: 0"
+                                    DispatchQueue.main.async {
+                                        cell.detailTextLabel?.text = "In stock: 0"
+                                    }
                                     self.bookStockQuantities.append(0)
                                 }
                             } else {
-                                cell?.detailTextLabel?.text = "In stock: 0"
+                                DispatchQueue.main.async {
+                                    cell.detailTextLabel?.text = "In stock: 0"
+                                }
                                 self.bookStockQuantities.append(0)
                             }
-                        } catch {
-                            print("error")
-                            cell?.detailTextLabel?.text = "In stock: 0"
+                        } else {
+                            DispatchQueue.main.async {
+                                cell.detailTextLabel?.text = "In stock: 0"
+                            }
                             self.bookStockQuantities.append(0)
                         }
+                    } else {
+                        DispatchQueue.main.async {
+                            cell.detailTextLabel?.text = "In stock: 0"
+                        }
+                        self.bookStockQuantities.append(0)
                     }
-                })
-                task.resume()
-                
-                do {
-                    if self.bookThumbnails[indexPath.row] != "" {
-                        let url = URL(string: self.bookThumbnails[indexPath.row])
-                        let data = try Data(contentsOf: url!)
-                        cell?.imageView?.image = UIImage(data: data)
-                    }
-                    self.numLooped += 1
                 } catch {
-                    print(error)
+                    print("error")
+                    DispatchQueue.main.async {
+                        cell.detailTextLabel?.text = "In stock: 0"
+                    }
+                    self.bookStockQuantities.append(0)
                 }
-                
-                if (self.doneLoad == false && self.numLooped == self.books.count * 2) {
+            })
+            task.resume()
+            
+            let url = URL(string: self.bookThumbnails[indexPath.row])
+            cell.imageView?.kf.indicatorType = .activity
+            cell.imageView?.kf.setImage(with:url, completionHandler: {
+                (image, error, cacheType, imageUrl) in
+                self.numLooped += 1
+                if (self.doneLoad == false && self.numLooped == self.books.count) {
                     self.doneLoad = true
                     self.tableView.reloadData()
                 }
-            }
+            })
         }
         
-        return cell!
+        return cell
     }
     
     // method to run when table view cell is tapped
@@ -269,12 +270,8 @@ class SecondViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let bookDetailsVC = storyboard.instantiateViewController(withIdentifier: "BookDetailsVC") as! BookDetailsVC
         bookDetailsVC.book = "\(books[indexPath.row]) by \(bookAuthors[indexPath.row])"
-        do {
-            let url = URL(string: self.bookThumbnails[indexPath.row])
-            let data = try Data(contentsOf: url!)
-            bookDetailsVC.image = UIImage(data: data)
-        } catch {
-            print(error)
+        if self.bookThumbnails[indexPath.row] != "" {
+            bookDetailsVC.image = URL(string: self.bookThumbnails[indexPath.row])
         }
         bookDetailsVC.quantity = bookStockQuantities[indexPath.row]
         bookDetailsVC.desc = bookDescriptions[indexPath.row]

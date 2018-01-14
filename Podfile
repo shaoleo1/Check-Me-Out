@@ -3,4 +3,5 @@ platform :ios, '10.0'
 use_frameworks!
 target 'Check Me Out' do
   pod 'TextFieldEffects'
+  pod 'Kingfisher'
 end

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Kingfisher
 
 class BookDetailsVC: UIViewController {
     
@@ -22,7 +23,7 @@ class BookDetailsVC: UIViewController {
     @IBOutlet weak var isbnLabel: UILabel!
     
     var book = ""
-    var image: UIImage? = nil
+    var image: URL? = nil
     var quantity = 0
     var desc = ""
     var rating = 0.0
@@ -37,7 +38,8 @@ class BookDetailsVC: UIViewController {
         super.viewDidLoad()
         
         titleAuthorLabel.text = book
-        bookImage.image = image
+        bookImage.kf.indicatorType = .activity
+        bookImage.kf.setImage(with: image)
         var attributedString = NSMutableAttributedString(string:"Quantity In Stock:", attributes:[NSAttributedStringKey.font: UIFont(name:"Baskerville-SemiBold", size:18)!])
         attributedString.append(NSMutableAttributedString(string: " \(quantity)"))
         quantityLabel.attributedText = attributedString

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class FirstViewController: UITableViewController {
     
@@ -99,74 +100,69 @@ class FirstViewController: UITableViewController {
         let dueDate = self.myBookDueDates[indexPath.row]
         cell?.detailTextLabel?.text = "Due: \(String(dueDate.prefix(10)))"
         
-        if(self.doneLoad == false) {
-            var request = URLRequest(url: URL(string: "https://www.googleapis.com/books/v1/volumes?q=isbn:" + myBookISBNs[indexPath.row] + "&key=AIzaSyCidOJdqXesqJzB_VMyXJtjTbAA1XiVkvY")!)
-            // Sets the http method to GET which means GETting data FROM the API. There are two methods, GET and POST. POST means POSTing data TO the API. In this case, we're using GET.
-            request.httpMethod = "GET"
-            // Sets the file type that the data will be retrieved to be JSON, which is the standard format.
-            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-            
-            // Starts the HTTP session (connects to the API URL with the search query and GETs the data).
-            let session = URLSession.shared
-            let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
-                DispatchQueue.main.sync {
-                    do {
-                        // Converts and saves the returned data into a variable called 'json' in appropriate JSON formatting.
-                        let json = try JSONSerialization.jsonObject(with: data!, options: [])                // Creates a dictionary from the JSON file to look up the value for the key given.
-                        if let dictionary = json as? [String: Any] {
-                            // Creates an array of the returned books.
-                            if let items = dictionary["items"] as? [Any] {
-                                // Creates a dictionary of the books' info.
-                                if let nestedDict = items[0] as? [String: Any] {
-                                    if let volumeInfo = nestedDict["volumeInfo"] as? [String: Any] {
-                                        if let imageLinks = volumeInfo["imageLinks"] as? [String: String] {
-                                            if let smallThumbnail = imageLinks["smallThumbnail"] {
-                                                do {
-                                                    let url = URL(string: smallThumbnail)
-                                                    let data = try Data(contentsOf: url!)
-                                                    cell?.imageView?.image = UIImage(data: data)
-                                                    self.numLooped += 1
-                                                    if (self.doneLoad == false && self.numLooped == self.myBooks.count) {
-                                                        self.doneLoad = true
-                                                        self.refreshControl?.endRefreshing()
-                                                        self.bookTableView.reloadData()
-                                                    }
-                                                } catch {
-                                                    print(error)
-                                                    self.numLooped += 1
-                                                    if (self.doneLoad == false && self.numLooped == self.myBooks.count) {
-                                                        self.doneLoad = true
-                                                        self.refreshControl?.endRefreshing()
-                                                        self.bookTableView.reloadData()
-                                                    }
-                                                }
-                                            } else {
+        var request = URLRequest(url: URL(string: "https://www.googleapis.com/books/v1/volumes?q=isbn:" + myBookISBNs[indexPath.row] + "&key=AIzaSyCidOJdqXesqJzB_VMyXJtjTbAA1XiVkvY")!)
+        // Sets the http method to GET which means GETting data FROM the API. There are two methods, GET and POST. POST means POSTing data TO the API. In this case, we're using GET.
+        request.httpMethod = "GET"
+        // Sets the file type that the data will be retrieved to be JSON, which is the standard format.
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        // Starts the HTTP session (connects to the API URL with the search query and GETs the data).
+        let session = URLSession.shared
+        let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
+            DispatchQueue.main.sync {
+                do {
+                    // Converts and saves the returned data into a variable called 'json' in appropriate JSON formatting.
+                    let json = try JSONSerialization.jsonObject(with: data!, options: [])                // Creates a dictionary from the JSON file to look up the value for the key given.
+                    if let dictionary = json as? [String: Any] {
+                        // Creates an array of the returned books.
+                        if let items = dictionary["items"] as? [Any] {
+                            // Creates a dictionary of the books' info.
+                            if let nestedDict = items[0] as? [String: Any] {
+                                if let volumeInfo = nestedDict["volumeInfo"] as? [String: Any] {
+                                    if let imageLinks = volumeInfo["imageLinks"] as? [String: String] {
+                                        if let smallThumbnail = imageLinks["smallThumbnail"] {
+                                            let url = URL(string: smallThumbnail)
+                                            cell?.imageView?.kf.indicatorType = .activity
+                                            cell?.imageView?.kf.setImage(with: url, completionHandler: {
+                                                (image, error, cacheType, imageUrl) in
                                                 self.numLooped += 1
                                                 if (self.doneLoad == false && self.numLooped == self.myBooks.count) {
                                                     self.doneLoad = true
                                                     self.refreshControl?.endRefreshing()
                                                     self.bookTableView.reloadData()
                                                 }
-                                            }
+                                            })
+                                        } else {
+                                            let url = URL(string: "https://i.imgur.com/JIGQIq7.png")
+                                            cell?.imageView?.kf.indicatorType = .activity
+                                            cell?.imageView?.kf.setImage(with: url, completionHandler: {
+                                                (image, error, cacheType, imageUrl) in
+                                                self.numLooped += 1
+                                                if (self.doneLoad == false && self.numLooped == self.myBooks.count) {
+                                                    self.doneLoad = true
+                                                    self.refreshControl?.endRefreshing()
+                                                    self.bookTableView.reloadData()
+                                                }
+                                            })
                                         }
                                     }
                                 }
-                            } else {
-                                self.numLooped += 1
-                                if (self.doneLoad == false && self.numLooped == self.myBooks.count) {
-                                    self.doneLoad = true
-                                    self.refreshControl?.endRefreshing()
-                                    self.bookTableView.reloadData()
-                                }
+                            }
+                        } else {
+                            self.numLooped += 1
+                            if (self.doneLoad == false && self.numLooped == self.myBooks.count) {
+                                self.doneLoad = true
+                                self.refreshControl?.endRefreshing()
+                                self.bookTableView.reloadData()
                             }
                         }
-                    } catch {
-                        print("error")
                     }
+                } catch {
+                    print("error")
                 }
-            })
-            task.resume()
-        }
+            }
+        })
+        task.resume()
         
         return cell!
     }
