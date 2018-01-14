@@ -36,11 +36,12 @@
 * Swift 4 (programming language)
 * Xcode 9.2 (IDE)
 * Cocoapods (Dependency manager, MIT license)
-* TextFieldEffects (Custom effects for text fields, MIT license)
+* TextFieldEffects (Library for custom text fields effects, MIT license)
+* Kingfisher (Library for downloading and caching images, MIT license)
 * Node.js (programming language (backend API))
-* Express.js (web app framework for Node.js (backend API))
+* Express.js (web app framework for Node.js (backend API), MIT license)
 * MySQL (relational database management system/RDBMS using structured query language/SQL (backend API))
-* Google Books API (search and retrieve information about books)
+* Google Books API (to search and retrieve information about books)
 * GitHub (collaboration and source/version control)
 
 ### Screenshots
