@@ -131,6 +131,8 @@ class Account: UIViewController {
                             // Creates a dictionary of the book data.
                             if let data = dict["data"] as? [Any] {
                                 self.totalBooksLabel.text = "Total Books Checked Out: \(data.count)"
+                            } else {
+                                self.totalBooksLabel.text = "Total Books Checked Out: 0"
                             }
                         }
                     }
@@ -161,6 +163,8 @@ class Account: UIViewController {
                             // Creates a dictionary of the book data.
                             if let data = dict["data"] as? [Any] {
                                 self.totalReservationsLabel.text = "Total Reservations: \(data.count)"
+                            } else {
+                                self.totalReservationsLabel.text = "Total Reservations: 0"
                             }
                         }
                     }

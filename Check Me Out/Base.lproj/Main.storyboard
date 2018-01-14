@@ -55,7 +55,7 @@
                                     <fragment content="First Last">
                                         <attributes>
                                             <font key="NSFont" size="38" name="AvenirNext-Regular"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -70,7 +70,7 @@
                                     <fragment content="123456">
                                         <attributes>
                                             <font key="NSFont" size="24" name="AvenirNext-UltraLight"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -139,15 +139,13 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rwd-TE-s1q">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwd-TE-s1q">
                                 <rect key="frame" x="139" y="559" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="Q4i-ST-fhK"/>
                                     <constraint firstAttribute="height" constant="48" id="oZy-KM-qfG"/>
                                 </constraints>
-                                <state key="normal" image="FACEBOOK_LOGO.png">
-                                    <attributedString key="attributedTitle"/>
-                                </state>
+                                <state key="normal" title="" image="FACEBOOK_LOGO.png"/>
                                 <connections>
                                     <action selector="shareToFacebook:" destination="j89-em-Kpo" eventType="touchUpInside" id="VxT-l0-lNb"/>
                                 </connections>
@@ -231,7 +229,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="mrB-rl-gsY">
             <objects>
-                <tabBarController id="gLz-qM-JLi" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="librarianTabViewController" id="gLz-qM-JLi" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YXM-oo-IxZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -254,7 +252,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8Gv-ac-gLY">
+                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8Gv-ac-gLY">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <attributedString key="attributedText">
@@ -320,7 +318,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="weg-Cf-Yrq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-967.20000000000005" y="-643.62818590704649"/>
+            <point key="canvasLocation" x="-968.11594202898561" y="-644.02173913043487"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="lUl-T7-1P8">
@@ -440,7 +438,7 @@
                                 <rect key="frame" x="0.0" y="76" width="414" height="611"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="dpr-8s-lAc" detailTextLabel="3sb-xm-5TL" rowHeight="100" style="IBUITableViewCellStyleSubtitle" id="Ubz-hH-BX3">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="dpr-8s-lAc" detailTextLabel="3sb-xm-5TL" rowHeight="100" style="IBUITableViewCellStyleSubtitle" id="Ubz-hH-BX3">
                                         <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ubz-hH-BX3" id="ElG-w2-0kH">
@@ -506,7 +504,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1022" y="756"/>
+            <point key="canvasLocation" x="1021.7391304347827" y="755.70652173913049"/>
         </scene>
         <!--Book DetailsVC-->
         <scene sceneID="Flm-7W-Jng">
