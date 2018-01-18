@@ -235,6 +235,64 @@ class Account: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    @IBAction func reportBugPressed(_ sender: UIButton) {
+        let alertController = UIAlertController(title: "Report Bug", message: nil, preferredStyle: .alert)
+        
+        //adding textfields to our dialog box
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Report any bugs or issues"
+        }
+        
+        //the confirm action taking the inputs
+        let confirmAction = UIAlertAction(title: "Submit", style: .default) { action in
+            let message = alertController.textFields?[0].text
+            if message != "" {
+                let sid = self.defaults.object(forKey: "sid") as? String
+                let url = URL(string: "http://52.22.1.14:3000/library/api/v1/bugs")!
+                var request = URLRequest(url: url)
+                request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+                request.httpMethod = "POST"
+                let postString = "message=\(message!)&sid=\(sid!)&key=bsvr9N5wrGJVDz98UvBMnGt8"
+                request.httpBody = postString.data(using: .utf8)
+                let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                    guard let data = data, error == nil else {                                                 // check for fundamental networking error
+                        print("error=\(String(describing: error))")
+                        return
+                    }
+                    
+                    if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+                        print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                        print("response = \(String(describing: response))")
+                    }
+                    
+                    let responseString = String(data: data, encoding: .utf8)
+                    print("responseString = \(String(describing: responseString))")
+                    
+                    if responseString == "success" {
+                        let alertController = UIAlertController(title: "Thank You", message: "You have successfully reported a bug.", preferredStyle: .alert)
+                        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler:nil))
+                        self.present(alertController, animated: true, completion: nil)
+                    } else {
+                        let alertController = UIAlertController(title: "Error", message: responseString, preferredStyle: .alert)
+                        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler:nil))
+                        self.present(alertController, animated: true, completion: nil)
+                    }
+                }
+                task.resume()
+            }
+        }
+        
+        //the cancel action doing nothing
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action in }
+        
+        //adding the action to dialogbox
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        
+        //finally presenting the dialog box
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     @IBAction func logOutButton(_ sender: UIButton) {
         let defaults = UserDefaults.standard
         defaults.removeObject(forKey:"sid")

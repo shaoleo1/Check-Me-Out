@@ -18,19 +18,23 @@
 ## About
 
 ### Introduction
-> Create an iOS application that allows students and teachers to check out, reserve, and obtain information about books at the school library. Built from scratch with the Swift 4 programming language and Xcode 9.2 IDE in the frontend/app-side, and Node.js, Express.js, and MySQL in the backend/API-side, the app allows for barcode scanning of books to allow students to check out by themselves. The app also allows for the searching of books to obtain numerous details (including but not limited to: description, rating, page count, etc.) and the reservation of books for up to 7 days. Due dates and reservation expiration dates are automatically calculated and fines will automatically accumulate for every day late; students/teachers will be notified before their book is due as well as every single day after it's due. The app also offers a detailed map of the school library. A librarian account is also implemented to allow librarians to check in returned books, view logs and details of students and their check-outs, and add and manage books in the library. Code is well written, commented, error free.
+> We created an iOS application that allows students and teachers to check out, reserve, and obtain information about books at the school library. Built from scratch with the Swift 4 programming language and Xcode 9.2 IDE in the frontend/app-side, and Node.js, Express.js, and MySQL in the backend/API-side, the app allows for barcode scanning of books to allow students to check out by themselves. The app also allows for the searching of books to obtain numerous details (including but not limited to: description, rating, page count, etc.) and the reservation of books for up to 7 days. Due dates and reservation expiration dates are automatically calculated and fines will automatically accumulate for every day late; students/teachers will be notified before their book is due as well as every single day after it's due. The app also offers a detailed map of the school library. A librarian account is also implemented to allow librarians to check in returned books, view logs and details of students and their check-outs, and add and manage books in the library. Code is well written, commented, error free.
 
 ### App Features
-* Easily login using student or teacher's school ID.
+* Easily log in using student or teacher's school ID.
 * Easily view all the books that the student or teacher has checked out and their due dates.
 * Seemlessly scan barcodes of books in the library to instantly check them out with a due date automatically calculated.
 * Search for books and their numerous details such as quantity, genre, description, etc.
+* Reserve books for 7 days as well as withdraw reservations for books.
+* Book stock quantity counts are automatically and accurately tracked.
+* Refresh bookshelf by pulling down on the screen.
 * Fully functional and fast self-made backend API using Node.js, Express.js, and MySQL hosted on Amazon Web Services Elastic Compute Cloud (AWS EC2) instance.
 * View a detailed map of the school library.
-* View fines and other account info.
+* View automatically accumulated fines and other account info.
 * Librarian account for adding new books to the library, checking in returned books, and viewing student information/logs.
 * Simple and self-explanatory user interface and app navigation.
 * Ability to navigate to, share, and communicate through social media.
+* Bug reporting system.
 
 ### Services Used
 * Swift 4 (programming language)
@@ -38,6 +42,8 @@
 * Cocoapods (Dependency manager, MIT license)
 * TextFieldEffects (Library for custom text fields effects, MIT license)
 * Kingfisher (Library for downloading and caching images, MIT license)
+* Facebook SDK for iOS (To login and share on Facebook)
+* Twitter Kit for iOS (To login and share on Twitter)
 * Node.js (programming language (backend API))
 * Express.js (web app framework for Node.js (backend API), MIT license)
 * MySQL (relational database management system/RDBMS using structured query language/SQL (backend API))
@@ -53,7 +59,9 @@
 * To check out a book, tap on the camera tab in the middle of the bar at the bottom. Simply point your camera at the barcode of any book to scan it. Samples books to test that are in stock at the library are `To Kill a Mockingbird` and `Johnny Tremain`. Scanned books that are not in stock at the library will not be able to be checked out.
 * If you do not have these books, you may scan the ISBN barcodes here:
 * To Kill a Mockingbird: ![To Kill a Mockingbird](https://i.imgur.com/VEI3ycZ.png)  Johnny Tremain: ![Johnny Tremain](https://i.imgur.com/Ok4axQq.png)
+* All checked out and reserved books will show up on the bookshelf. If it is not there, pull down on the screen to refresh.
 * To reserve books, tap on the search tab to search books. Books that are in stock (quantity > 0) such as Fast Food Nation and Johnny Tremain can be reserved.
+* To withdraw your reservation, tap on the reservation you wish to withdraw (if it is not there, pull down on the screen to refresh the bookshelf).
 * Fines can be found on the settings tab and notifications are sent once every day at 3:10PM ET for overdue books and start the day before the book is due.
 * A test librarian account is already in place. The ID is `ehthslibrarian`.
 * Librarians may scan returned books from students and teachers, add new books to the library, and manage/view student info/logs.

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		00FA9E402643D725CFD0F99F /* Pods_Check_Me_Out.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4AF1B2F60E114DCCDCBF72 /* Pods_Check_Me_Out.framework */; };
 		165185511FF8430C00477518 /* SCHOOL_MAP.JPEG in Resources */ = {isa = PBXBuildFile; fileRef = 165185501FF8430C00477518 /* SCHOOL_MAP.JPEG */; };
+		1686AC8C200C12B2007711DE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1686AC8B200C12B2007711DE /* README.md */; };
+		1686AC8E2010505C007711DE /* LibrarianCameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1686AC8D2010505C007711DE /* LibrarianCameraVC.swift */; };
 		16E4DEAF2009A79C0037A431 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E4DEAE2009A79C0037A431 /* UserNotifications.framework */; };
 		16E4DEBB2009DC380037A431 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 16E4DEBA2009DC380037A431 /* Podfile */; };
 		16E4DEC02009E72A0037A431 /* TWITTER_LOGO.png in Resources */ = {isa = PBXBuildFile; fileRef = 16E4DEBE2009E72A0037A431 /* TWITTER_LOGO.png */; };
@@ -48,6 +50,8 @@
 /* Begin PBXFileReference section */
 		165185501FF8430C00477518 /* SCHOOL_MAP.JPEG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SCHOOL_MAP.JPEG; sourceTree = "<group>"; };
 		165185521FF9769F00477518 /* Check Me Out.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Check Me Out.entitlements"; sourceTree = "<group>"; };
+		1686AC8B200C12B2007711DE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1686AC8D2010505C007711DE /* LibrarianCameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibrarianCameraVC.swift; sourceTree = "<group>"; };
 		16E4DEAE2009A79C0037A431 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		16E4DEBA2009DC380037A431 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		16E4DEBE2009E72A0037A431 /* TWITTER_LOGO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TWITTER_LOGO.png; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 		86393FA61FE342630059507F = {
 			isa = PBXGroup;
 			children = (
+				1686AC8B200C12B2007711DE /* README.md */,
 				16E4DEBA2009DC380037A431 /* Podfile */,
 				86393FB11FE342630059507F /* Check Me Out */,
 				86393FC81FE342630059507F /* LibraryAppTests */,
@@ -163,6 +168,7 @@
 				86393FBB1FE342630059507F /* Assets.xcassets */,
 				86393FBD1FE342630059507F /* LaunchScreen.storyboard */,
 				86393FC01FE342630059507F /* Info.plist */,
+				1686AC8D2010505C007711DE /* LibrarianCameraVC.swift */,
 			);
 			path = "Check Me Out";
 			sourceTree = "<group>";
@@ -306,6 +312,7 @@
 				86393FBC1FE342630059507F /* Assets.xcassets in Resources */,
 				16E4DEBB2009DC380037A431 /* Podfile in Resources */,
 				16E4DEC02009E72A0037A431 /* TWITTER_LOGO.png in Resources */,
+				1686AC8C200C12B2007711DE /* README.md in Resources */,
 				86393FBA1FE342630059507F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,11 +341,25 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Check Me Out/Pods-Check Me Out-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
 			);
@@ -353,9 +374,13 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Check Me Out/Pods-Check Me Out-resources.sh",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -395,6 +420,7 @@
 				86393FB31FE342630059507F /* AppDelegate.swift in Sources */,
 				86393FB51FE342630059507F /* FirstViewController.swift in Sources */,
 				86AC466A1FEA069B003FEB11 /* Account.swift in Sources */,
+				1686AC8E2010505C007711DE /* LibrarianCameraVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
