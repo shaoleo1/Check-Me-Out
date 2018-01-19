@@ -13,6 +13,7 @@
     <customFonts key="customFonts">
         <array key="AvenirNext.ttc">
             <string>AvenirNext-Regular</string>
+            <string>AvenirNext-UltraLight</string>
         </array>
         <array key="Baskerville.ttc">
             <string>Baskerville</string>
@@ -28,7 +29,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ggC-Sk-zKR">
-                                <rect key="frame" x="171.66666666666666" y="626" width="71" height="36"/>
+                                <rect key="frame" x="171.66666666666666" y="601" width="71" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="71" id="Jgq-St-gce"/>
                                 </constraints>
@@ -140,7 +141,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwd-TE-s1q">
-                                <rect key="frame" x="139" y="559" width="48" height="48"/>
+                                <rect key="frame" x="139" y="543" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="Q4i-ST-fhK"/>
                                     <constraint firstAttribute="height" constant="48" id="oZy-KM-qfG"/>
@@ -151,7 +152,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xtI-In-46d">
-                                <rect key="frame" x="227" y="559" width="48" height="48"/>
+                                <rect key="frame" x="227" y="543" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="7W8-mZ-On3"/>
                                     <constraint firstAttribute="height" constant="48" id="ojJ-d6-OsO"/>
@@ -180,15 +181,36 @@
                                     <action selector="reportBugPressed:" destination="j89-em-Kpo" eventType="touchUpInside" id="MPs-12-Aaf"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© 2018 Check Me Out Egg Harbor Township FBLA. This mobile app was created for educational purposes only." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2OT-Db-aoV">
+                                <rect key="frame" x="16" y="646" width="382" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="E48-zQ-LDf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RRB-zR-xwy">
+                                <rect key="frame" x="16" y="373" width="57" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="08k-Li-NUK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="24"/>
+                                <state key="normal" title="Share"/>
+                                <connections>
+                                    <action selector="sharePressed:" destination="j89-em-Kpo" eventType="touchUpInside" id="8PP-HH-XXF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="S0R-Zx-ION" firstAttribute="top" secondItem="Spk-Ci-wxC" secondAttribute="bottom" constant="8" id="0kS-Xh-fzG"/>
-                            <constraint firstItem="rKs-LC-83q" firstAttribute="bottom" secondItem="ggC-Sk-zKR" secondAttribute="bottom" constant="25" id="30z-NE-uz8"/>
+                            <constraint firstItem="rKs-LC-83q" firstAttribute="bottom" secondItem="ggC-Sk-zKR" secondAttribute="bottom" constant="50" id="30z-NE-uz8"/>
                             <constraint firstItem="rKs-LC-83q" firstAttribute="trailing" secondItem="bUo-Iw-nFQ" secondAttribute="trailing" constant="16" id="6Cd-2o-9Zm"/>
                             <constraint firstItem="bUo-Iw-nFQ" firstAttribute="top" secondItem="M0O-hM-FEi" secondAttribute="bottom" constant="8" id="6xa-vh-8AH"/>
-                            <constraint firstItem="ggC-Sk-zKR" firstAttribute="top" secondItem="rwd-TE-s1q" secondAttribute="bottom" constant="19" id="9a4-Qk-zey"/>
+                            <constraint firstItem="ggC-Sk-zKR" firstAttribute="top" secondItem="rwd-TE-s1q" secondAttribute="bottom" constant="10" id="9a4-Qk-zey"/>
                             <constraint firstItem="OXm-mW-6wS" firstAttribute="leading" secondItem="rKs-LC-83q" secondAttribute="leading" constant="16" id="Cwy-Vv-yjg"/>
+                            <constraint firstItem="rKs-LC-83q" firstAttribute="trailing" secondItem="RZA-h7-ud8" secondAttribute="trailing" constant="286" id="E0q-yC-H4y"/>
                             <constraint firstItem="rKs-LC-83q" firstAttribute="trailing" secondItem="Spk-Ci-wxC" secondAttribute="trailing" constant="16" id="GXf-2M-Eat"/>
                             <constraint firstItem="rKs-LC-83q" firstAttribute="trailing" secondItem="S0R-Zx-ION" secondAttribute="trailing" constant="180" id="Gpc-CJ-H0a"/>
                             <constraint firstItem="OXm-mW-6wS" firstAttribute="top" secondItem="rKs-LC-83q" secondAttribute="top" constant="30" id="KhI-wd-YP1"/>
@@ -197,14 +219,20 @@
                             <constraint firstItem="ggC-Sk-zKR" firstAttribute="centerX" secondItem="rKs-LC-83q" secondAttribute="centerX" id="Oxv-Mr-Lyh"/>
                             <constraint firstItem="rKs-LC-83q" firstAttribute="trailing" secondItem="OXm-mW-6wS" secondAttribute="trailing" constant="16" id="OyK-o0-f2h"/>
                             <constraint firstItem="M0O-hM-FEi" firstAttribute="leading" secondItem="rKs-LC-83q" secondAttribute="leading" constant="16" id="PeV-5m-uhm"/>
+                            <constraint firstItem="RRB-zR-xwy" firstAttribute="leading" secondItem="rKs-LC-83q" secondAttribute="leading" constant="16" id="QNt-TU-5Bl"/>
+                            <constraint firstItem="rKs-LC-83q" firstAttribute="bottom" secondItem="2OT-Db-aoV" secondAttribute="bottom" constant="4" id="SSm-vG-WcX"/>
                             <constraint firstItem="M0O-hM-FEi" firstAttribute="top" secondItem="lm2-iY-8l9" secondAttribute="bottom" constant="8" id="U1B-gL-0hA"/>
                             <constraint firstItem="rKs-LC-83q" firstAttribute="trailing" secondItem="M0O-hM-FEi" secondAttribute="trailing" constant="16" id="UWg-Sd-BIM"/>
-                            <constraint firstItem="ggC-Sk-zKR" firstAttribute="top" secondItem="xtI-In-46d" secondAttribute="bottom" constant="19" id="Y01-pW-mxI"/>
+                            <constraint firstItem="RRB-zR-xwy" firstAttribute="top" secondItem="RZA-h7-ud8" secondAttribute="bottom" constant="8" id="Usg-Uw-Eop"/>
+                            <constraint firstItem="ggC-Sk-zKR" firstAttribute="top" secondItem="xtI-In-46d" secondAttribute="bottom" constant="10" id="Y01-pW-mxI"/>
                             <constraint firstItem="RZA-h7-ud8" firstAttribute="top" secondItem="S0R-Zx-ION" secondAttribute="bottom" constant="8" id="YVN-8v-FuR"/>
                             <constraint firstItem="Spk-Ci-wxC" firstAttribute="leading" secondItem="rKs-LC-83q" secondAttribute="leading" constant="16" id="bFs-dV-Kh7"/>
                             <constraint firstItem="lm2-iY-8l9" firstAttribute="leading" secondItem="rKs-LC-83q" secondAttribute="leading" constant="16" id="d92-2y-pTI"/>
                             <constraint firstItem="bUo-Iw-nFQ" firstAttribute="leading" secondItem="rKs-LC-83q" secondAttribute="leading" constant="16" id="e35-et-UYT"/>
+                            <constraint firstItem="rKs-LC-83q" firstAttribute="trailing" secondItem="RRB-zR-xwy" secondAttribute="trailing" constant="341" id="h7H-yM-Xo2"/>
+                            <constraint firstItem="rKs-LC-83q" firstAttribute="trailing" secondItem="2OT-Db-aoV" secondAttribute="trailing" constant="16" id="kyS-ha-9UZ"/>
                             <constraint firstItem="rKs-LC-83q" firstAttribute="trailing" secondItem="lm2-iY-8l9" secondAttribute="trailing" constant="16" id="ogO-Ga-rg4"/>
+                            <constraint firstItem="2OT-Db-aoV" firstAttribute="leading" secondItem="rKs-LC-83q" secondAttribute="leading" constant="16" id="q0p-CD-V0a"/>
                             <constraint firstItem="S0R-Zx-ION" firstAttribute="leading" secondItem="rKs-LC-83q" secondAttribute="leading" constant="16" id="qUp-uW-sNt"/>
                             <constraint firstItem="RZA-h7-ud8" firstAttribute="leading" secondItem="rKs-LC-83q" secondAttribute="leading" constant="16" id="ttQ-69-94O"/>
                             <constraint firstItem="lm2-iY-8l9" firstAttribute="top" secondItem="OXm-mW-6wS" secondAttribute="bottom" constant="10.5" id="tx9-uH-EfX"/>
@@ -227,23 +255,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zre-Rb-Uam" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1020" y="1506.296851574213"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="EDF-HG-6Nk">
-            <objects>
-                <viewController id="ou9-46-5Ye" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="TKf-Zl-siI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="BzO-dS-Tp0"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" systemItem="recents" id="suu-9z-T8Z"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EjL-hj-sjV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1980" y="-721"/>
+            <point key="canvasLocation" x="1018.840579710145" y="1505.7065217391305"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="mrB-rl-gsY">
@@ -257,7 +269,6 @@
                     <connections>
                         <segue destination="3dH-MG-5Ay" kind="relationship" relationship="viewControllers" id="xtn-iE-v7b"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="tNl-Yo-LGN"/>
-                        <segue destination="ou9-46-5Ye" kind="relationship" relationship="viewControllers" id="xB1-Us-rIP"/>
                         <segue destination="j89-em-Kpo" kind="relationship" relationship="viewControllers" id="R1T-sZ-yuL"/>
                     </connections>
                 </tabBarController>
@@ -551,64 +562,64 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G6S-eC-VFh">
-                                <rect key="frame" x="0.0" y="70" width="0.0" height="656"/>
+                                <rect key="frame" x="10" y="70" width="394" height="656"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pRG-c6-QOw">
-                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="417"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="417"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xZX-8p-i1m">
-                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="128"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="394" height="128"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book Title by Author" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtv-RX-kef">
-                                                <rect key="frame" x="0.0" y="136" width="0.0" height="32.333333333333343"/>
+                                                <rect key="frame" x="0.0" y="136" width="394" height="32.333333333333343"/>
                                                 <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="28"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FqU-Nb-0p3">
-                                                <rect key="frame" x="0.0" y="176.33333333333334" width="0.0" height="20.666666666666657"/>
+                                                <rect key="frame" x="0.0" y="176.33333333333334" width="394" height="20.666666666666657"/>
                                                 <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uFl-0x-MtW">
-                                                <rect key="frame" x="0.0" y="205" width="0.0" height="20.666666666666657"/>
+                                                <rect key="frame" x="0.0" y="205" width="394" height="20.666666666666657"/>
                                                 <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XS2-8d-xey">
-                                                <rect key="frame" x="0.0" y="233.66666666666669" width="0.0" height="20.666666666666657"/>
+                                                <rect key="frame" x="0.0" y="233.66666666666669" width="394" height="20.666666666666657"/>
                                                 <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cY-4D-6QC">
-                                                <rect key="frame" x="0.0" y="262.33333333333331" width="0.0" height="20.666666666666686"/>
+                                                <rect key="frame" x="0.0" y="262.33333333333331" width="394" height="20.666666666666686"/>
                                                 <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mla-zR-Y2m">
-                                                <rect key="frame" x="0.0" y="291" width="0.0" height="20.666666666666686"/>
+                                                <rect key="frame" x="0.0" y="291" width="394" height="20.666666666666686"/>
                                                 <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewx-hm-OCi">
-                                                <rect key="frame" x="0.0" y="319.66666666666669" width="0.0" height="20.666666666666686"/>
+                                                <rect key="frame" x="0.0" y="319.66666666666669" width="394" height="20.666666666666686"/>
                                                 <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SxX-9Z-irW">
-                                                <rect key="frame" x="0.0" y="348.33333333333331" width="0.0" height="20.666666666666686"/>
+                                                <rect key="frame" x="0.0" y="348.33333333333331" width="394" height="20.666666666666686"/>
                                                 <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ny-Gg-IJn">
-                                                <rect key="frame" x="0.0" y="377" width="0.0" height="40"/>
+                                                <rect key="frame" x="0.0" y="377" width="394" height="40"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                                 <state key="normal" title="Reserve"/>
                                                 <connections>
@@ -627,7 +638,7 @@
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vo6-VL-3Fb">
-                                <rect key="frame" x="0.0" y="30" width="25" height="25"/>
+                                <rect key="frame" x="5" y="30" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="P5U-1B-Mu8"/>
                                     <constraint firstAttribute="width" constant="25" id="iwM-aC-jsK"/>

@@ -188,13 +188,9 @@ class Account: UIViewController {
         //action
         let share = UIAlertAction(title: "Share to Facebook", style: .default) {(ACTION) in
             //checks if user is connected to Facebook
-            if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook) {
-               
-               let post = SLComposeViewController(forServiceType: SLServiceTypeFacebook)!
-               post.setInitialText("Come check out this app!")
-               self.present(post, animated: true, completion: nil)
-                print("yes")
-            } else {self.showAlert(service: "Facebook")}
+            let post = SLComposeViewController(forServiceType: SLServiceTypeFacebook)!
+            post.setInitialText("Come check out this app: Check Me Out - A Smart Library Companion for EHTHS Library!")
+            self.present(post, animated: true, completion: nil)
         }
 
         //adds action to the alert
@@ -211,13 +207,9 @@ class Account: UIViewController {
         //action
         let share = UIAlertAction(title: "Share to Twitter", style: .default) {(ACTION) in
             //checks if user is connected to Twitter
-            if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter) {
-                
-                let post = SLComposeViewController(forServiceType: SLServiceTypeTwitter)!
-                post.setInitialText("Come check out this app!")
-                self.present(post, animated: true, completion: nil)
-                print("yes")
-            } else {self.showAlert(service: "Twitter")}
+            let post = SLComposeViewController(forServiceType: SLServiceTypeTwitter)!
+            post.setInitialText("Come check out this app: Check Me Out - A Smart Library Companion for EHTHS Library!")
+            self.present(post, animated: true, completion: nil)
         }
         
         //adds action to the alert
@@ -233,6 +225,12 @@ class Account: UIViewController {
         
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func sharePressed(_ sender: UIButton) {
+        let shareText = "Come check out this app!"
+        let vc = UIActivityViewController(activityItems: [shareText], applicationActivities: [])
+        present(vc, animated: true, completion: nil)
     }
     
     @IBAction func reportBugPressed(_ sender: UIButton) {

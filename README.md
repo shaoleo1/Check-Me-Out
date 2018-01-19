@@ -42,8 +42,6 @@
 * Cocoapods (Dependency manager, MIT license)
 * TextFieldEffects (Library for custom text fields effects, MIT license)
 * Kingfisher (Library for downloading and caching images, MIT license)
-* Facebook SDK for iOS (To login and share on Facebook)
-* Twitter Kit for iOS (To login and share on Twitter)
 * Node.js (programming language (backend API))
 * Express.js (web app framework for Node.js (backend API), MIT license)
 * MySQL (relational database management system/RDBMS using structured query language/SQL (backend API))
