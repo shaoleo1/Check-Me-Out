@@ -79,12 +79,13 @@
 5. Go to the top left corner, select `Check Me Out` as the Scheme; select your attached iPhone to run the app on (should be at the top of the list); and press the run button (play button)
 ![Select Run](https://i.imgur.com/xZCPY5u.png)
 6. If signing errors occur (this is expected), please see the Signing Errors section (⬇️)
+7. For an easier install of the app using TestFlight (Apple's App Beta Testing Platform), please email shaoleo1@gmail.com with your email used for your Apple ID to test the app using TestFlight. Download TestFlight from the App Store and follow instructions in the email you will receive.
 
 ### Signing Errors
 If a signing error occurs while compiling or running an app please do the following:
 
 1. Go to Xcode -> Preferences, and select Accounts. Here, select the + button in the bottom left corner and sign into your Apple Developer Account. If you do not have an Apple Developer Account, follow [these instuctions](https://9to5mac.com/2016/03/27/how-to-create-free-apple-developer-account-sideload-apps/) to make an account (it should work with a normal Apple ID).
-In order for push notifications to work, your Apple ID must be enrolled in the Apple Developer Program for $100. If you are not in the Apple Developer Program, you must disable Push Notifications by clicking Check Me Out in the directory, selecting the capabilities tab, and switching off Push Notifications for the app to run.
+In order for push notifications to work, your Apple ID must be enrolled in the Apple Developer Program for $100. If you are not in the Apple Developer Program, you must disable Push Notifications by clicking Check Me Out in the directory, selecting the capabilities tab, and switching off Push Notifications for the app to run. If you still wish to test push notifications, you can also test the app via TestFlight (Apple's App Beta Testing Platform). Please email shaoleo1@gmail.com with your email used for your Apple ID to test the app using TestFlight. Download TestFlight from the App Store and follow instructions in the email you will receive. Push notifications send every day at 3:10 Eastern Time.
 2. Select Check Me Out (project file) in the Project Navigator (located on the left)
 3. Select the "General" tab 
 4. Under Identity: Change the bundle identifier, replacing com.leoshao.checkmeout with any unique domain that you would like to use
