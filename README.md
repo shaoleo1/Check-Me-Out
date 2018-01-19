@@ -49,7 +49,7 @@
 * GitHub (collaboration and source/version control)
 
 ### Screenshots
-[Download PDF]()
+[Download PDF](https://drive.google.com/file/d/1uMoZyS5Z_yOy8HPVQVcOC24c93ja2pDE/view?usp=sharing)
 
 ### How to use Check Me Out
 * A test student account (teacher accounts are the same) is already in place. The ID is `311620`.
