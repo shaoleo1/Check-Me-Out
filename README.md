@@ -72,8 +72,8 @@
 * A physical iPhone running iOS 10.0+ (the camera is unusable on simulators and thus barcode scanning cannot be tested)
 
 ### Instructions for Testing
-1. Open Xcode and select Source Control -> Checkout
-2. Under "Or enter a repository location:", paste `https://github.com/shaoleo1/Check-Me-Out.git` and select "Next"
+1. If you already have all the project source files, skip to step 4. Otherwise, open Xcode and select Clone an existing project
+2. Paste `https://github.com/shaoleo1/Check-Me-Out.git` and select "Clone"
 3. Select a location to store the project, select "Download", and wait for the project to download and open
 4. Unlock your iPhone and plug it into your Mac
 5. Go to the top left corner, select `Check Me Out` as the Scheme; select your attached iPhone to run the app on (should be at the top of the list); and press the run button (play button)
