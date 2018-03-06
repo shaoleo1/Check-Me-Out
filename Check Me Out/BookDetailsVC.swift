@@ -52,7 +52,7 @@ class BookDetailsVC: UIViewController {
         attributedString = NSMutableAttributedString(string:"Category:", attributes:[NSAttributedStringKey.font: UIFont(name:"Baskerville-SemiBold", size:18)!])
         attributedString.append(NSMutableAttributedString(string: " \(category)"))
         categoryLabel.attributedText = attributedString
-        attributedString = NSMutableAttributedString(string:"Description:", attributes:[NSAttributedStringKey.font: UIFont(name:"Baskerville-SemiBold", size:18)!])
+        attributedString = NSMutableAttributedString(string:"Publisher:", attributes:[NSAttributedStringKey.font: UIFont(name:"Baskerville-SemiBold", size:18)!])
         attributedString.append(NSMutableAttributedString(string: " \(publisher)"))
         publisherLabel.attributedText = attributedString
         attributedString = NSMutableAttributedString(string:"Page Count:", attributes:[NSAttributedStringKey.font: UIFont(name:"Baskerville-SemiBold", size:18)!])
