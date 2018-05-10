@@ -1,6 +1,6 @@
 # Check Me Out - A Smart Library Companion
 
-![App logo](https://github.com/shaoleo1/Check-Me-Out/blob/master/Check%20Me%20Out/Assets.xcassets/AppIcon.appiconset/180.jpg?raw=true)
+![App logo](https://github.com/shaoleo1/Check-Me-Out/blob/master/Check%20Me%20Out/Assets.xcassets/AppIcon.appiconset/CMO180.jpg?raw=true)
 
 
   * [About](#about)
