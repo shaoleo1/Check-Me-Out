@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		00FA9E402643D725CFD0F99F /* Pods_Check_Me_Out.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4AF1B2F60E114DCCDCBF72 /* Pods_Check_Me_Out.framework */; };
-		165185511FF8430C00477518 /* SCHOOL_MAP.JPEG in Resources */ = {isa = PBXBuildFile; fileRef = 165185501FF8430C00477518 /* SCHOOL_MAP.JPEG */; };
 		1686AC8C200C12B2007711DE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1686AC8B200C12B2007711DE /* README.md */; };
 		1686AC8E2010505C007711DE /* LibrarianCameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1686AC8D2010505C007711DE /* LibrarianCameraVC.swift */; };
 		16E4DEAF2009A79C0037A431 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E4DEAE2009A79C0037A431 /* UserNotifications.framework */; };
@@ -51,7 +50,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		165185501FF8430C00477518 /* SCHOOL_MAP.JPEG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SCHOOL_MAP.JPEG; sourceTree = "<group>"; };
 		165185521FF9769F00477518 /* Check Me Out.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Check Me Out.entitlements"; sourceTree = "<group>"; };
 		1686AC8B200C12B2007711DE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1686AC8D2010505C007711DE /* LibrarianCameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibrarianCameraVC.swift; sourceTree = "<group>"; };
@@ -165,7 +163,6 @@
 				86AC46691FEA069B003FEB11 /* Account.swift */,
 				86AC466F1FF41840003FEB11 /* LoginVC.swift */,
 				16E4DEC2200A99740037A431 /* BookDetailsVC.swift */,
-				165185501FF8430C00477518 /* SCHOOL_MAP.JPEG */,
 				866204E3209BD16F004DA665 /* SCHOOL_MAP.PNG */,
 				16E4DEBF2009E72A0037A431 /* FACEBOOK_LOGO.png */,
 				16E4DEBE2009E72A0037A431 /* TWITTER_LOGO.png */,
@@ -311,7 +308,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				165185511FF8430C00477518 /* SCHOOL_MAP.JPEG in Resources */,
 				86393FBF1FE342630059507F /* LaunchScreen.storyboard in Resources */,
 				16E4DEC12009E72A0037A431 /* FACEBOOK_LOGO.png in Resources */,
 				86393FBC1FE342630059507F /* Assets.xcassets in Resources */,
