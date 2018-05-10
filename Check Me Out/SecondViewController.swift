@@ -62,7 +62,7 @@ class SecondViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         // Closes the keyboard
         searchBar.resignFirstResponder()
         
-        var request = URLRequest(url: URL(string: "https://www.googleapis.com/books/v1/volumes?q=" + searchBar.text!.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)! + "&key=AIzaSyCidOJdqXesqJzB_VMyXJtjTbAA1XiVkvY")!)
+        var request = URLRequest(url: URL(string: "http://52.22.1.14:3000/library/api/v1/books?keywords=" + searchBar.text!.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)! + "&key=bsvr9N5wrGJVDz98UvBMnGt8")!)
         // Sets the http method to GET which means GETting data FROM the API. There are two methods, GET and POST. POST means POSTing data TO the API. In this case, we're using GET.
         request.httpMethod = "GET"
         // Sets the file type that the data will be retrieved to be JSON, which is the standard format.
@@ -76,89 +76,231 @@ class SecondViewController: UIViewController, UISearchBarDelegate, UITableViewDe
                     // Converts and saves the returned data into a variable called 'json' in appropriate JSON formatting.
                     let json = try JSONSerialization.jsonObject(with: data!, options: [])
                     // Creates a dictionary from the JSON file to look up the value for the key given.
-                    if let dictionary = json as? [String: Any] {
+                    if let array = json as? [Any] {
                         // Creates an array of the returned terms.
-                        if let items = dictionary["items"] as? [[String: Any]] {
+                        if let dict = array[0] as? [String: Any] {
                             // Creates a dictionary of the current term details (e.g. term, definition, term number).
-                            for item in items {
-                                if let volumeInfo = item["volumeInfo"] as? [String: Any] {
-                                    if let title = volumeInfo["title"] as? String {
-                                        self.books.append(title)
-                                    } else {
-                                        self.books.append("")
-                                    }
-                                    if let authors = volumeInfo["authors"] as? [String] {
-                                        var combinedAuthors = ""
-                                        for (index, author) in authors.enumerated() {
-                                            if (index == 0) {
-                                                combinedAuthors += author
-                                            } else {
-                                                combinedAuthors = combinedAuthors + " and " + author
-                                            }
-                                        }
-                                        self.bookAuthors.append(combinedAuthors)
-                                    } else {
-                                        self.bookAuthors.append("")
-                                    }
-                                    if let industryIdentifiers = volumeInfo["industryIdentifiers"] as? [[String: String]] {
-                                        var exists = false
-                                        for isbn in industryIdentifiers {
-                                            if isbn["type"] == "ISBN_13" {
-                                                if let id = isbn["identifier"] {
-                                                    self.bookISBNs.append(id)
-                                                    exists = true
+                            if let data = dict["data"] as? [[String: Any]] {
+                                for book in data {
+                                    if let isbn = book["isbn"] as? String {
+                                        var request2 = URLRequest(url: URL(string: "https://www.googleapis.com/books/v1/volumes?q=isbn:" + isbn + "&key=AIzaSyCidOJdqXesqJzB_VMyXJtjTbAA1XiVkvY")!)
+                                        // Sets the http method to GET which means GETting data FROM the API. There are two methods, GET and POST. POST means POSTing data TO the API. In this case, we're using GET.
+                                        request2.httpMethod = "GET"
+                                        // Sets the file type that the data will be retrieved to be JSON, which is the standard format.
+                                        request2.addValue("application/json", forHTTPHeaderField: "Content-Type")
+                                        
+                                        // Starts the HTTP session (connects to the API URL with the search query and GETs the data).
+                                        let session2 = URLSession.shared
+                                        let task2 = session2.dataTask(with: request2, completionHandler: { data, response, error -> Void in
+                                            DispatchQueue.main.sync {
+                                                do {
+                                                    // Converts and saves the returned data into a variable called 'json' in appropriate JSON formatting.
+                                                    let json = try JSONSerialization.jsonObject(with: data!, options: [])
+                                                    // Creates a dictionary from the JSON file to look up the value for the key given.
+                                                    if let dictionary = json as? [String: Any] {
+                                                        // Creates an array of the returned terms.
+                                                        if let items = dictionary["items"] as? [[String: Any]] {
+                                                            // Creates a dictionary of the current term details (e.g. term, definition, term number).
+                                                            for item in items {
+                                                                if let volumeInfo = item["volumeInfo"] as? [String: Any] {
+                                                                    if let title = volumeInfo["title"] as? String {
+                                                                        self.books.append(title)
+                                                                    } else {
+                                                                        self.books.append("")
+                                                                    }
+                                                                    if let authors = volumeInfo["authors"] as? [String] {
+                                                                        var combinedAuthors = ""
+                                                                        for (index, author) in authors.enumerated() {
+                                                                            if (index == 0) {
+                                                                                combinedAuthors += author
+                                                                            } else {
+                                                                                combinedAuthors = combinedAuthors + " and " + author
+                                                                            }
+                                                                        }
+                                                                        self.bookAuthors.append(combinedAuthors)
+                                                                    } else {
+                                                                        self.bookAuthors.append("")
+                                                                    }
+                                                                    if let industryIdentifiers = volumeInfo["industryIdentifiers"] as? [[String: String]] {
+                                                                        var exists = false
+                                                                        for isbn in industryIdentifiers {
+                                                                            if isbn["type"] == "ISBN_13" {
+                                                                                if let id = isbn["identifier"] {
+                                                                                    self.bookISBNs.append(id)
+                                                                                    exists = true
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                        if !exists {
+                                                                            self.bookISBNs.append("")
+                                                                        }
+                                                                    } else {
+                                                                        self.bookISBNs.append("")
+                                                                    }
+                                                                    if let imageLinks = volumeInfo["imageLinks"] as? [String: String] {
+                                                                        self.bookThumbnails.append(imageLinks["smallThumbnail"]!)
+                                                                    } else {
+                                                                        self.bookThumbnails.append("https://i.imgur.com/JIGQIq7.png")
+                                                                    }
+                                                                    if let description = volumeInfo["description"] as? String {
+                                                                        self.bookDescriptions.append(description)
+                                                                    } else {
+                                                                        self.bookDescriptions.append("")
+                                                                    }
+                                                                    if let pageCount = volumeInfo["pageCount"] as? Int {
+                                                                        self.bookPageCounts.append(pageCount)
+                                                                    } else {
+                                                                        self.bookPageCounts.append(0)
+                                                                    }
+                                                                    if let averageRating = volumeInfo["averageRating"] as? Double {
+                                                                        self.bookRatings.append(averageRating)
+                                                                    } else {
+                                                                        self.bookRatings.append(0)
+                                                                    }
+                                                                    if let categories = volumeInfo["categories"] as? [String] {
+                                                                        var combinedCategories = ""
+                                                                        for (index, category) in categories.enumerated() {
+                                                                            if (index == 0) {
+                                                                                combinedCategories += category
+                                                                            } else {
+                                                                                combinedCategories = combinedCategories + " and " + category
+                                                                            }
+                                                                        }
+                                                                        self.bookCategories.append(combinedCategories)
+                                                                    } else {
+                                                                        self.bookCategories.append("")
+                                                                    }
+                                                                    if let publisher = volumeInfo["publisher"] as? String {
+                                                                        self.bookPublishers.append(publisher)
+                                                                    } else {
+                                                                        self.bookPublishers.append("")
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                } catch {
+                                                    print("error")
                                                 }
                                             }
-                                        }
-                                        if !exists {
-                                            self.bookISBNs.append("")
-                                        }
-                                    } else {
-                                        self.bookISBNs.append("")
-                                    }
-                                    if let imageLinks = volumeInfo["imageLinks"] as? [String: String] {
-                                        self.bookThumbnails.append(imageLinks["smallThumbnail"]!)
-                                    } else {
-                                        self.bookThumbnails.append("https://i.imgur.com/JIGQIq7.png")
-                                    }
-                                    if let description = volumeInfo["description"] as? String {
-                                        self.bookDescriptions.append(description)
-                                    } else {
-                                        self.bookDescriptions.append("")
-                                    }
-                                    if let pageCount = volumeInfo["pageCount"] as? Int {
-                                        self.bookPageCounts.append(pageCount)
-                                    } else {
-                                        self.bookPageCounts.append(0)
-                                    }
-                                    if let averageRating = volumeInfo["averageRating"] as? Double {
-                                        self.bookRatings.append(averageRating)
-                                    } else {
-                                        self.bookRatings.append(0)
-                                    }
-                                    if let categories = volumeInfo["categories"] as? [String] {
-                                        var combinedCategories = ""
-                                        for (index, category) in categories.enumerated() {
-                                            if (index == 0) {
-                                                combinedCategories += category
-                                            } else {
-                                                combinedCategories = combinedCategories + " and " + category
-                                            }
-                                        }
-                                        self.bookCategories.append(combinedCategories)
-                                    } else {
-                                        self.bookCategories.append("")
-                                    }
-                                    if let publisher = volumeInfo["publisher"] as? String {
-                                        self.bookPublishers.append(publisher)
-                                    } else {
-                                        self.bookPublishers.append("")
+                                        })
+                                        task2.resume()
+                                        
                                     }
                                 }
                             }
-                            self.tableView.reloadData()
                         }
                     }
+                    var request2 = URLRequest(url: URL(string: "https://www.googleapis.com/books/v1/volumes?q=" + searchBar.text!.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)! + "&key=AIzaSyCidOJdqXesqJzB_VMyXJtjTbAA1XiVkvY")!)
+                    // Sets the http method to GET which means GETting data FROM the API. There are two methods, GET and POST. POST means POSTing data TO the API. In this case, we're using GET.
+                    request2.httpMethod = "GET"
+                    // Sets the file type that the data will be retrieved to be JSON, which is the standard format.
+                    request2.addValue("application/json", forHTTPHeaderField: "Content-Type")
+                    
+                    // Starts the HTTP session (connects to the API URL with the search query and GETs the data).
+                    let session2 = URLSession.shared
+                    let task2 = session2.dataTask(with: request2, completionHandler: { data, response, error -> Void in
+                        DispatchQueue.main.sync {
+                            do {
+                                // Converts and saves the returned data into a variable called 'json' in appropriate JSON formatting.
+                                let json = try JSONSerialization.jsonObject(with: data!, options: [])
+                                // Creates a dictionary from the JSON file to look up the value for the key given.
+                                if let dictionary = json as? [String: Any] {
+                                    // Creates an array of the returned terms.
+                                    if let items = dictionary["items"] as? [[String: Any]] {
+                                        // Creates a dictionary of the current term details (e.g. term, definition, term number).
+                                        for item in items {
+                                            if let volumeInfo = item["volumeInfo"] as? [String: Any] {
+                                                var go = true
+                                                if let industryIdentifiers = volumeInfo["industryIdentifiers"] as? [[String: String]] {
+                                                    var exists = false
+                                                    for isbn in industryIdentifiers {
+                                                        if isbn["type"] == "ISBN_13" {
+                                                            if let id = isbn["identifier"] {
+                                                                if !self.bookISBNs.contains(id) {
+                                                                    self.bookISBNs.append(id)
+                                                                } else {
+                                                                    go = false
+                                                                }
+                                                                exists = true
+                                                            }
+                                                        }
+                                                    }
+                                                    if !exists {
+                                                        self.bookISBNs.append("")
+                                                    }
+                                                } else {
+                                                    self.bookISBNs.append("")
+                                                }
+                                                if go {
+                                                    if let title = volumeInfo["title"] as? String {
+                                                        self.books.append(title)
+                                                    } else {
+                                                        self.books.append("")
+                                                    }
+                                                    if let authors = volumeInfo["authors"] as? [String] {
+                                                        var combinedAuthors = ""
+                                                        for (index, author) in authors.enumerated() {
+                                                            if (index == 0) {
+                                                                combinedAuthors += author
+                                                            } else {
+                                                                combinedAuthors = combinedAuthors + " and " + author
+                                                            }
+                                                        }
+                                                        self.bookAuthors.append(combinedAuthors)
+                                                    } else {
+                                                        self.bookAuthors.append("")
+                                                    }
+                                                    if let imageLinks = volumeInfo["imageLinks"] as? [String: String] {
+                                                        self.bookThumbnails.append(imageLinks["smallThumbnail"]!)
+                                                    } else {
+                                                        self.bookThumbnails.append("https://i.imgur.com/JIGQIq7.png")
+                                                    }
+                                                    if let description = volumeInfo["description"] as? String {
+                                                        self.bookDescriptions.append(description)
+                                                    } else {
+                                                        self.bookDescriptions.append("")
+                                                    }
+                                                    if let pageCount = volumeInfo["pageCount"] as? Int {
+                                                        self.bookPageCounts.append(pageCount)
+                                                    } else {
+                                                        self.bookPageCounts.append(0)
+                                                    }
+                                                    if let averageRating = volumeInfo["averageRating"] as? Double {
+                                                        self.bookRatings.append(averageRating)
+                                                    } else {
+                                                        self.bookRatings.append(0)
+                                                    }
+                                                    if let categories = volumeInfo["categories"] as? [String] {
+                                                        var combinedCategories = ""
+                                                        for (index, category) in categories.enumerated() {
+                                                            if (index == 0) {
+                                                                combinedCategories += category
+                                                            } else {
+                                                                combinedCategories = combinedCategories + " and " + category
+                                                            }
+                                                        }
+                                                        self.bookCategories.append(combinedCategories)
+                                                    } else {
+                                                        self.bookCategories.append("")
+                                                    }
+                                                    if let publisher = volumeInfo["publisher"] as? String {
+                                                        self.bookPublishers.append(publisher)
+                                                    } else {
+                                                        self.bookPublishers.append("")
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        self.tableView.reloadData()
+                                    }
+                                }
+                            } catch {
+                                print("error")
+                            }
+                        }
+                    })
+                    task2.resume()
                 } catch {
                     print("error")
                 }
