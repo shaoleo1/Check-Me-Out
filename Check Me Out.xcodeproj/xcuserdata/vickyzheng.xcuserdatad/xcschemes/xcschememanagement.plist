@@ -7,6 +7,11 @@
 		<key>Check Me Out.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>Check Me Out.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
 		<key>LibraryApp.xcscheme</key>
